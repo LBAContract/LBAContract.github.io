@@ -1,0 +1,2022 @@
+{
+  "contractName": "CampaignMoney",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "name": "_allowedCampaign",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "campaignId",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "money",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "isActive",
+          "type": "bool"
+        },
+        {
+          "internalType": "bool",
+          "name": "isExist",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getFeeCampaign",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "changeFeeCampaign",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getFeeCampaignCancel",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "changeFeeCampaignCancel",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.0+commit.9e61f92b\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"name\":\"_allowedCampaign\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"campaignId\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"money\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"isActive\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"isExist\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"changeFeeCampaign\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"changeFeeCampaignCancel\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getFeeCampaign\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getFeeCampaignCancel\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/D/CN9/Capstone/blockchain-1/contracts/CampaignMoney.sol\":\"CampaignMoney\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/D/CN9/Capstone/blockchain-1/contracts/CampaignMoney.sol\":{\"keccak256\":\"0xdc10f38fc52be47040794688f51ad9b1f86d4a2e214b4ad94fde3fd1bc83ac7d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0a7bee345bc3291b95acc7a9c6c4779b1c7109c6644925153bb5b89db48dc0ce\",\"dweb:/ipfs/QmNfndgfbJ1q1FRLafXi5TcEfwspBdQNzKo5uVdZX99zPT\"]},\"/D/CN9/Capstone/blockchain-1/contracts/Ownable.sol\":{\"keccak256\":\"0x359542fa1c6773e0d4a9aae4cccabb9850e771114975d1de79d14616d01a44d4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://437a80b3ab0b7570c6f047b90d44c56c82d2e52e44869b236893d6e5de089460\",\"dweb:/ipfs/QmfFtFbGyfhUjHgjZPCVsWJJUam9iomgVnG77Vx2YJsyrf\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506001600281905550600a600381905550610605806100706000396000f3fe608060405234801561001057600080fd5b506004361061007e576000357c0100000000000000000000000000000000000000000000000000000000900480626fd991146100835780633a8cb7d5146100a15780633be1f80f146100bf5780635205c364146100f35780638da5cb5b1461010f578063c2975e451461012d575b600080fd5b61008b610149565b6040516100989190610476565b60405180910390f35b6100a9610153565b6040516100b69190610476565b60405180910390f35b6100d960048036038101906100d4919061031e565b61015d565b6040516100ea95949392919061041c565b60405180910390f35b61010d60048036038101906101089190610372565b610268565b005b610117610272565b6040516101249190610401565b60405180910390f35b61014760048036038101906101429190610372565b610296565b005b6000600354905090565b6000600254905090565b60016020528160005260406000208180516020810182018051848252602083016020850120818352809550505050505060009150915050806000018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561022c5780601f106102015761010080835404028352916020019161022c565b820191906000526020600020905b81548152906001019060200180831161020f57829003601f168201915b5050505050908060010154908060020154908060030160009054906101000a900460ff16908060030160019054906101000a900460ff16905085565b8060028190555050565b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b8060038190555050565b6000813590506102af816105a1565b92915050565b600082601f8301126102c657600080fd5b81356102d96102d4826104be565b610491565b915080825260208301602083018583830111156102f557600080fd5b61030083828461054e565b50505092915050565b600081359050610318816105b8565b92915050565b6000806040838503121561033157600080fd5b600061033f858286016102a0565b925050602083013567ffffffffffffffff81111561035c57600080fd5b610368858286016102b5565b9150509250929050565b60006020828403121561038457600080fd5b600061039284828501610309565b91505092915050565b6103a481610506565b82525050565b6103b381610518565b82525050565b60006103c4826104ea565b6103ce81856104f5565b93506103de81856020860161055d565b6103e781610590565b840191505092915050565b6103fb81610544565b82525050565b6000602082019050610416600083018461039b565b92915050565b600060a082019050818103600083015261043681886103b9565b905061044560208301876103f2565b61045260408301866103f2565b61045f60608301856103aa565b61046c60808301846103aa565b9695505050505050565b600060208201905061048b60008301846103f2565b92915050565b6000604051905081810181811067ffffffffffffffff821117156104b457600080fd5b8060405250919050565b600067ffffffffffffffff8211156104d557600080fd5b601f19601f8301169050602081019050919050565b600081519050919050565b600082825260208201905092915050565b600061051182610524565b9050919050565b60008115159050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000819050919050565b82818337600083830152505050565b60005b8381101561057b578082015181840152602081019050610560565b8381111561058a576000848401525b50505050565b6000601f19601f8301169050919050565b6105aa81610506565b81146105b557600080fd5b50565b6105c181610544565b81146105cc57600080fd5b5056fea264697066735822122029cf6651fe5eb96562fbb414036f4f2f13bd61a6999b35c44385d70b61303de164736f6c63430007000033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061007e576000357c0100000000000000000000000000000000000000000000000000000000900480626fd991146100835780633a8cb7d5146100a15780633be1f80f146100bf5780635205c364146100f35780638da5cb5b1461010f578063c2975e451461012d575b600080fd5b61008b610149565b6040516100989190610476565b60405180910390f35b6100a9610153565b6040516100b69190610476565b60405180910390f35b6100d960048036038101906100d4919061031e565b61015d565b6040516100ea95949392919061041c565b60405180910390f35b61010d60048036038101906101089190610372565b610268565b005b610117610272565b6040516101249190610401565b60405180910390f35b61014760048036038101906101429190610372565b610296565b005b6000600354905090565b6000600254905090565b60016020528160005260406000208180516020810182018051848252602083016020850120818352809550505050505060009150915050806000018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561022c5780601f106102015761010080835404028352916020019161022c565b820191906000526020600020905b81548152906001019060200180831161020f57829003601f168201915b5050505050908060010154908060020154908060030160009054906101000a900460ff16908060030160019054906101000a900460ff16905085565b8060028190555050565b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b8060038190555050565b6000813590506102af816105a1565b92915050565b600082601f8301126102c657600080fd5b81356102d96102d4826104be565b610491565b915080825260208301602083018583830111156102f557600080fd5b61030083828461054e565b50505092915050565b600081359050610318816105b8565b92915050565b6000806040838503121561033157600080fd5b600061033f858286016102a0565b925050602083013567ffffffffffffffff81111561035c57600080fd5b610368858286016102b5565b9150509250929050565b60006020828403121561038457600080fd5b600061039284828501610309565b91505092915050565b6103a481610506565b82525050565b6103b381610518565b82525050565b60006103c4826104ea565b6103ce81856104f5565b93506103de81856020860161055d565b6103e781610590565b840191505092915050565b6103fb81610544565b82525050565b6000602082019050610416600083018461039b565b92915050565b600060a082019050818103600083015261043681886103b9565b905061044560208301876103f2565b61045260408301866103f2565b61045f60608301856103aa565b61046c60808301846103aa565b9695505050505050565b600060208201905061048b60008301846103f2565b92915050565b6000604051905081810181811067ffffffffffffffff821117156104b457600080fd5b8060405250919050565b600067ffffffffffffffff8211156104d557600080fd5b601f19601f8301169050602081019050919050565b600081519050919050565b600082825260208201905092915050565b600061051182610524565b9050919050565b60008115159050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000819050919050565b82818337600083830152505050565b60005b8381101561057b578082015181840152602081019050610560565b8381111561058a576000848401525b50505050565b6000601f19601f8301169050919050565b6105aa81610506565b81146105b557600080fd5b50565b6105c181610544565b81146105cc57600080fd5b5056fea264697066735822122029cf6651fe5eb96562fbb414036f4f2f13bd61a6999b35c44385d70b61303de164736f6c63430007000033",
+  "immutableReferences": {},
+  "sourceMap": "129:864:0:-:0;;;478:82;;;;;;;;;;151:10:2;143:5;;:18;;;;;;;;;;;;;;;;;;517:1:0;502:12;:16;;;;550:2;529:18;:23;;;;129:864;;;;;;",
+  "deployedSourceMap": "129:864:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;776:106;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;574:94;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;326:73;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;;;;;:::i;:::-;;;;;;;;676:88;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;93:20:2;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;890:100:0;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;776:106;829:7;856:18;;849:25;;776:106;:::o;574:94::-;621:7;648:12;;641:19;;574:94;:::o;326:73::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;676:88::-;751:5;736:12;:20;;;;676:88;:::o;93:20:2:-;;;;;;;;;;;;:::o;890:100:0:-;977:5;956:18;:26;;;;890:100;:::o;5:130:-1:-;;85:6;72:20;63:29;;97:33;124:5;97:33;:::i;:::-;57:78;;;;:::o;143:442::-;;245:3;238:4;230:6;226:17;222:27;212:2;;263:1;260;253:12;212:2;300:6;287:20;322:65;337:49;379:6;337:49;:::i;:::-;322:65;:::i;:::-;313:74;;407:6;400:5;393:21;443:4;435:6;431:17;476:4;469:5;465:16;511:3;502:6;497:3;493:16;490:25;487:2;;;528:1;525;518:12;487:2;538:41;572:6;567:3;562;538:41;:::i;:::-;205:380;;;;;;;:::o;593:130::-;;673:6;660:20;651:29;;685:33;712:5;685:33;:::i;:::-;645:78;;;;:::o;730:472::-;;;861:2;849:9;840:7;836:23;832:32;829:2;;;877:1;874;867:12;829:2;912:1;929:53;974:7;965:6;954:9;950:22;929:53;:::i;:::-;919:63;;891:97;1047:2;1036:9;1032:18;1019:32;1071:18;1063:6;1060:30;1057:2;;;1103:1;1100;1093:12;1057:2;1123:63;1178:7;1169:6;1158:9;1154:22;1123:63;:::i;:::-;1113:73;;998:194;823:379;;;;;:::o;1209:241::-;;1313:2;1301:9;1292:7;1288:23;1284:32;1281:2;;;1329:1;1326;1319:12;1281:2;1364:1;1381:53;1426:7;1417:6;1406:9;1402:22;1381:53;:::i;:::-;1371:63;;1343:97;1275:175;;;;:::o;1457:113::-;1540:24;1558:5;1540:24;:::i;:::-;1535:3;1528:37;1522:48;;:::o;1577:104::-;1654:21;1669:5;1654:21;:::i;:::-;1649:3;1642:34;1636:45;;:::o;1688:347::-;;1800:39;1833:5;1800:39;:::i;:::-;1851:71;1915:6;1910:3;1851:71;:::i;:::-;1844:78;;1927:52;1972:6;1967:3;1960:4;1953:5;1949:16;1927:52;:::i;:::-;2000:29;2022:6;2000:29;:::i;:::-;1995:3;1991:39;1984:46;;1780:255;;;;;:::o;2042:113::-;2125:24;2143:5;2125:24;:::i;:::-;2120:3;2113:37;2107:48;;:::o;2162:222::-;;2289:2;2278:9;2274:18;2266:26;;2303:71;2371:1;2360:9;2356:17;2347:6;2303:71;:::i;:::-;2260:124;;;;:::o;2391:732::-;;2638:3;2627:9;2623:19;2615:27;;2689:9;2683:4;2679:20;2675:1;2664:9;2660:17;2653:47;2714:78;2787:4;2778:6;2714:78;:::i;:::-;2706:86;;2803:72;2871:2;2860:9;2856:18;2847:6;2803:72;:::i;:::-;2886;2954:2;2943:9;2939:18;2930:6;2886:72;:::i;:::-;2969:66;3031:2;3020:9;3016:18;3007:6;2969:66;:::i;:::-;3046:67;3108:3;3097:9;3093:19;3084:6;3046:67;:::i;:::-;2609:514;;;;;;;;:::o;3130:222::-;;3257:2;3246:9;3242:18;3234:26;;3271:71;3339:1;3328:9;3324:17;3315:6;3271:71;:::i;:::-;3228:124;;;;:::o;3359:256::-;;3421:2;3415:9;3405:19;;3459:4;3451:6;3447:17;3558:6;3546:10;3543:22;3522:18;3510:10;3507:34;3504:62;3501:2;;;3579:1;3576;3569:12;3501:2;3599:10;3595:2;3588:22;3399:216;;;;:::o;3622:322::-;;3766:18;3758:6;3755:30;3752:2;;;3798:1;3795;3788:12;3752:2;3865:4;3861:9;3854:4;3846:6;3842:17;3838:33;3830:41;;3929:4;3923;3919:15;3911:23;;3689:255;;;:::o;3951:122::-;;4045:5;4039:12;4029:22;;4010:63;;;:::o;4081:163::-;;4196:6;4191:3;4184:19;4233:4;4228:3;4224:14;4209:29;;4177:67;;;;:::o;4252:91::-;;4314:24;4332:5;4314:24;:::i;:::-;4303:35;;4297:46;;;:::o;4350:85::-;;4423:5;4416:13;4409:21;4398:32;;4392:43;;;:::o;4442:121::-;;4515:42;4508:5;4504:54;4493:65;;4487:76;;;:::o;4570:72::-;;4632:5;4621:16;;4615:27;;;:::o;4650:145::-;4731:6;4726:3;4721;4708:30;4787:1;4778:6;4773:3;4769:16;4762:27;4701:94;;;:::o;4804:268::-;4869:1;4876:101;4890:6;4887:1;4884:13;4876:101;;;4966:1;4961:3;4957:11;4951:18;4947:1;4942:3;4938:11;4931:39;4912:2;4909:1;4905:10;4900:15;;4876:101;;;4992:6;4989:1;4986:13;4983:2;;;5057:1;5048:6;5043:3;5039:16;5032:27;4983:2;4853:219;;;;:::o;5080:97::-;;5168:2;5164:7;5159:2;5152:5;5148:14;5144:28;5134:38;;5128:49;;;:::o;5185:117::-;5254:24;5272:5;5254:24;:::i;:::-;5247:5;5244:35;5234:2;;5293:1;5290;5283:12;5234:2;5228:74;:::o;5309:117::-;5378:24;5396:5;5378:24;:::i;:::-;5371:5;5368:35;5358:2;;5417:1;5414;5407:12;5358:2;5352:74;:::o",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.4.22 <0.8.0;\r\npragma experimental ABIEncoderV2;\r\nimport './Ownable.sol';\r\n\r\ncontract CampaignMoney is Ownable{\r\n    \r\n    struct Campaign {\r\n        string campaignId;\r\n        uint money;\r\n        uint timestamp;\r\n        bool isActive;\r\n        bool isExist;\r\n    }\r\n    mapping (address => mapping (string => Campaign)) public _allowedCampaign;\r\n    uint private _feeCampaign;\r\n    uint private _feeCampaignCancel;\r\n\r\n    constructor(){\r\n        _feeCampaign = 1;\r\n        _feeCampaignCancel = 10;\r\n    }\r\n    \r\n\r\n    function getFeeCampaign() public view returns (uint256) {\r\n        return _feeCampaign;\r\n    }\r\n\r\n    function changeFeeCampaign(uint256 value) public {\r\n        _feeCampaign = value;\r\n    }\r\n    \r\n    function getFeeCampaignCancel() public view returns (uint256) {\r\n        return _feeCampaignCancel;\r\n    }\r\n\r\n    function changeFeeCampaignCancel(uint256 value) public {\r\n        _feeCampaignCancel = value;\r\n    }\r\n}",
+  "sourcePath": "D:\\CN9\\Capstone\\blockchain-1\\contracts\\CampaignMoney.sol",
+  "ast": {
+    "absolutePath": "/D/CN9/Capstone/blockchain-1/contracts/CampaignMoney.sol",
+    "exportedSymbols": {
+      "CampaignMoney": [
+        75
+      ]
+    },
+    "id": 76,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:32:0"
+      },
+      {
+        "id": 2,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "67:33:0"
+      },
+      {
+        "absolutePath": "/D/CN9/Capstone/blockchain-1/contracts/Ownable.sol",
+        "file": "./Ownable.sol",
+        "id": 3,
+        "nodeType": "ImportDirective",
+        "scope": 76,
+        "sourceUnit": 147,
+        "src": "102:23:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 4,
+              "name": "Ownable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 146,
+              "src": "155:7:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Ownable_$146",
+                "typeString": "contract Ownable"
+              }
+            },
+            "id": 5,
+            "nodeType": "InheritanceSpecifier",
+            "src": "155:7:0"
+          }
+        ],
+        "contractDependencies": [
+          146
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 75,
+        "linearizedBaseContracts": [
+          75,
+          146
+        ],
+        "name": "CampaignMoney",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "CampaignMoney.Campaign",
+            "id": 16,
+            "members": [
+              {
+                "constant": false,
+                "id": 7,
+                "mutability": "mutable",
+                "name": "campaignId",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 16,
+                "src": "202:17:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 6,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "202:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 9,
+                "mutability": "mutable",
+                "name": "money",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 16,
+                "src": "230:10:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 8,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "230:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 11,
+                "mutability": "mutable",
+                "name": "timestamp",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 16,
+                "src": "251:14:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 10,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "251:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 13,
+                "mutability": "mutable",
+                "name": "isActive",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 16,
+                "src": "276:13:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 12,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "276:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 15,
+                "mutability": "mutable",
+                "name": "isExist",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 16,
+                "src": "300:12:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 14,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "300:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Campaign",
+            "nodeType": "StructDefinition",
+            "scope": 75,
+            "src": "175:145:0",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "functionSelector": "3be1f80f",
+            "id": 22,
+            "mutability": "mutable",
+            "name": "_allowedCampaign",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 75,
+            "src": "326:73:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_string_memory_ptr_$_t_struct$_Campaign_$16_storage_$_$",
+              "typeString": "mapping(address => mapping(string => struct CampaignMoney.Campaign))"
+            },
+            "typeName": {
+              "id": 21,
+              "keyType": {
+                "id": 17,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "335:7:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "326:49:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_string_memory_ptr_$_t_struct$_Campaign_$16_storage_$_$",
+                "typeString": "mapping(address => mapping(string => struct CampaignMoney.Campaign))"
+              },
+              "valueType": {
+                "id": 20,
+                "keyType": {
+                  "id": 18,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "355:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "nodeType": "Mapping",
+                "src": "346:28:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Campaign_$16_storage_$",
+                  "typeString": "mapping(string => struct CampaignMoney.Campaign)"
+                },
+                "valueType": {
+                  "contractScope": null,
+                  "id": 19,
+                  "name": "Campaign",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 16,
+                  "src": "365:8:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Campaign_$16_storage_ptr",
+                    "typeString": "struct CampaignMoney.Campaign"
+                  }
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 24,
+            "mutability": "mutable",
+            "name": "_feeCampaign",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 75,
+            "src": "406:25:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 23,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "406:4:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "constant": false,
+            "id": 26,
+            "mutability": "mutable",
+            "name": "_feeCampaignCancel",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 75,
+            "src": "438:31:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 25,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "438:4:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 37,
+              "nodeType": "Block",
+              "src": "491:69:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 31,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 29,
+                      "name": "_feeCampaign",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 24,
+                      "src": "502:12:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "31",
+                      "id": 30,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "517:1:0",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_1_by_1",
+                        "typeString": "int_const 1"
+                      },
+                      "value": "1"
+                    },
+                    "src": "502:16:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 32,
+                  "nodeType": "ExpressionStatement",
+                  "src": "502:16:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 35,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 33,
+                      "name": "_feeCampaignCancel",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 26,
+                      "src": "529:18:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "3130",
+                      "id": 34,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "550:2:0",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_10_by_1",
+                        "typeString": "int_const 10"
+                      },
+                      "value": "10"
+                    },
+                    "src": "529:23:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 36,
+                  "nodeType": "ExpressionStatement",
+                  "src": "529:23:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 38,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 27,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "489:2:0"
+            },
+            "returnParameters": {
+              "id": 28,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "491:0:0"
+            },
+            "scope": 75,
+            "src": "478:82:0",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 45,
+              "nodeType": "Block",
+              "src": "630:38:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 43,
+                    "name": "_feeCampaign",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 24,
+                    "src": "648:12:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 42,
+                  "id": 44,
+                  "nodeType": "Return",
+                  "src": "641:19:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "3a8cb7d5",
+            "id": 46,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getFeeCampaign",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 39,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "597:2:0"
+            },
+            "returnParameters": {
+              "id": 42,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 41,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 46,
+                  "src": "621:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 40,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "621:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "620:9:0"
+            },
+            "scope": 75,
+            "src": "574:94:0",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 55,
+              "nodeType": "Block",
+              "src": "725:39:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 53,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 51,
+                      "name": "_feeCampaign",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 24,
+                      "src": "736:12:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 52,
+                      "name": "value",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 48,
+                      "src": "751:5:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "736:20:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 54,
+                  "nodeType": "ExpressionStatement",
+                  "src": "736:20:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "5205c364",
+            "id": 56,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "changeFeeCampaign",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 49,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 48,
+                  "mutability": "mutable",
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 56,
+                  "src": "703:13:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 47,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "703:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "702:15:0"
+            },
+            "returnParameters": {
+              "id": 50,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "725:0:0"
+            },
+            "scope": 75,
+            "src": "676:88:0",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 63,
+              "nodeType": "Block",
+              "src": "838:44:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 61,
+                    "name": "_feeCampaignCancel",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 26,
+                    "src": "856:18:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 60,
+                  "id": 62,
+                  "nodeType": "Return",
+                  "src": "849:25:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "006fd991",
+            "id": 64,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getFeeCampaignCancel",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 57,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "805:2:0"
+            },
+            "returnParameters": {
+              "id": 60,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 59,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 64,
+                  "src": "829:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 58,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "829:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "828:9:0"
+            },
+            "scope": 75,
+            "src": "776:106:0",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 73,
+              "nodeType": "Block",
+              "src": "945:45:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 71,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 69,
+                      "name": "_feeCampaignCancel",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 26,
+                      "src": "956:18:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 70,
+                      "name": "value",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 66,
+                      "src": "977:5:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "956:26:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 72,
+                  "nodeType": "ExpressionStatement",
+                  "src": "956:26:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "c2975e45",
+            "id": 74,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "changeFeeCampaignCancel",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 67,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 66,
+                  "mutability": "mutable",
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 74,
+                  "src": "923:13:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 65,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "923:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "922:15:0"
+            },
+            "returnParameters": {
+              "id": 68,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "945:0:0"
+            },
+            "scope": 75,
+            "src": "890:100:0",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 76,
+        "src": "129:864:0"
+      }
+    ],
+    "src": "33:960:0"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/D/CN9/Capstone/blockchain-1/contracts/CampaignMoney.sol",
+      "exportedSymbols": {
+        "CampaignMoney": [
+          75
+        ]
+      },
+      "license": "MIT"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".22",
+            "<",
+            "0.8",
+            ".0"
+          ]
+        },
+        "id": 1,
+        "name": "PragmaDirective",
+        "src": "33:32:0"
+      },
+      {
+        "attributes": {
+          "literals": [
+            "experimental",
+            "ABIEncoderV2"
+          ]
+        },
+        "id": 2,
+        "name": "PragmaDirective",
+        "src": "67:33:0"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 147,
+          "absolutePath": "/D/CN9/Capstone/blockchain-1/contracts/Ownable.sol",
+          "file": "./Ownable.sol",
+          "scope": 76,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 3,
+        "name": "ImportDirective",
+        "src": "102:23:0"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "contractDependencies": [
+            146
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            75,
+            146
+          ],
+          "name": "CampaignMoney",
+          "scope": 76
+        },
+        "children": [
+          {
+            "attributes": {
+              "arguments": null
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "Ownable",
+                  "referencedDeclaration": 146,
+                  "type": "contract Ownable"
+                },
+                "id": 4,
+                "name": "UserDefinedTypeName",
+                "src": "155:7:0"
+              }
+            ],
+            "id": 5,
+            "name": "InheritanceSpecifier",
+            "src": "155:7:0"
+          },
+          {
+            "attributes": {
+              "canonicalName": "CampaignMoney.Campaign",
+              "name": "Campaign",
+              "scope": 75,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "campaignId",
+                  "overrides": null,
+                  "scope": 16,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 6,
+                    "name": "ElementaryTypeName",
+                    "src": "202:6:0"
+                  }
+                ],
+                "id": 7,
+                "name": "VariableDeclaration",
+                "src": "202:17:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "money",
+                  "overrides": null,
+                  "scope": 16,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 8,
+                    "name": "ElementaryTypeName",
+                    "src": "230:4:0"
+                  }
+                ],
+                "id": 9,
+                "name": "VariableDeclaration",
+                "src": "230:10:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "timestamp",
+                  "overrides": null,
+                  "scope": 16,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 10,
+                    "name": "ElementaryTypeName",
+                    "src": "251:4:0"
+                  }
+                ],
+                "id": 11,
+                "name": "VariableDeclaration",
+                "src": "251:14:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "isActive",
+                  "overrides": null,
+                  "scope": 16,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "bool",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "bool",
+                      "type": "bool"
+                    },
+                    "id": 12,
+                    "name": "ElementaryTypeName",
+                    "src": "276:4:0"
+                  }
+                ],
+                "id": 13,
+                "name": "VariableDeclaration",
+                "src": "276:13:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "isExist",
+                  "overrides": null,
+                  "scope": 16,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "bool",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "bool",
+                      "type": "bool"
+                    },
+                    "id": 14,
+                    "name": "ElementaryTypeName",
+                    "src": "300:4:0"
+                  }
+                ],
+                "id": 15,
+                "name": "VariableDeclaration",
+                "src": "300:12:0"
+              }
+            ],
+            "id": 16,
+            "name": "StructDefinition",
+            "src": "175:145:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "functionSelector": "3be1f80f",
+              "mutability": "mutable",
+              "name": "_allowedCampaign",
+              "overrides": null,
+              "scope": 75,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(address => mapping(string => struct CampaignMoney.Campaign))",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(address => mapping(string => struct CampaignMoney.Campaign))"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "type": "address"
+                    },
+                    "id": 17,
+                    "name": "ElementaryTypeName",
+                    "src": "335:7:0"
+                  },
+                  {
+                    "attributes": {
+                      "type": "mapping(string => struct CampaignMoney.Campaign)"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 18,
+                        "name": "ElementaryTypeName",
+                        "src": "355:6:0"
+                      },
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "Campaign",
+                          "referencedDeclaration": 16,
+                          "type": "struct CampaignMoney.Campaign"
+                        },
+                        "id": 19,
+                        "name": "UserDefinedTypeName",
+                        "src": "365:8:0"
+                      }
+                    ],
+                    "id": 20,
+                    "name": "Mapping",
+                    "src": "346:28:0"
+                  }
+                ],
+                "id": 21,
+                "name": "Mapping",
+                "src": "326:49:0"
+              }
+            ],
+            "id": 22,
+            "name": "VariableDeclaration",
+            "src": "326:73:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "mutability": "mutable",
+              "name": "_feeCampaign",
+              "overrides": null,
+              "scope": 75,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256",
+              "value": null,
+              "visibility": "private"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint",
+                  "type": "uint256"
+                },
+                "id": 23,
+                "name": "ElementaryTypeName",
+                "src": "406:4:0"
+              }
+            ],
+            "id": 24,
+            "name": "VariableDeclaration",
+            "src": "406:25:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "mutability": "mutable",
+              "name": "_feeCampaignCancel",
+              "overrides": null,
+              "scope": 75,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256",
+              "value": null,
+              "visibility": "private"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint",
+                  "type": "uint256"
+                },
+                "id": 25,
+                "name": "ElementaryTypeName",
+                "src": "438:4:0"
+              }
+            ],
+            "id": 26,
+            "name": "VariableDeclaration",
+            "src": "438:31:0"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": true,
+              "kind": "constructor",
+              "modifiers": [
+                null
+              ],
+              "name": "",
+              "overrides": null,
+              "scope": 75,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 27,
+                "name": "ParameterList",
+                "src": "489:2:0"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 28,
+                "name": "ParameterList",
+                "src": "491:0:0"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 24,
+                              "type": "uint256",
+                              "value": "_feeCampaign"
+                            },
+                            "id": 29,
+                            "name": "Identifier",
+                            "src": "502:12:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "31",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "number",
+                              "type": "int_const 1",
+                              "value": "1"
+                            },
+                            "id": 30,
+                            "name": "Literal",
+                            "src": "517:1:0"
+                          }
+                        ],
+                        "id": 31,
+                        "name": "Assignment",
+                        "src": "502:16:0"
+                      }
+                    ],
+                    "id": 32,
+                    "name": "ExpressionStatement",
+                    "src": "502:16:0"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 26,
+                              "type": "uint256",
+                              "value": "_feeCampaignCancel"
+                            },
+                            "id": 33,
+                            "name": "Identifier",
+                            "src": "529:18:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "3130",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "number",
+                              "type": "int_const 10",
+                              "value": "10"
+                            },
+                            "id": 34,
+                            "name": "Literal",
+                            "src": "550:2:0"
+                          }
+                        ],
+                        "id": 35,
+                        "name": "Assignment",
+                        "src": "529:23:0"
+                      }
+                    ],
+                    "id": 36,
+                    "name": "ExpressionStatement",
+                    "src": "529:23:0"
+                  }
+                ],
+                "id": 37,
+                "name": "Block",
+                "src": "491:69:0"
+              }
+            ],
+            "id": 38,
+            "name": "FunctionDefinition",
+            "src": "478:82:0"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "functionSelector": "3a8cb7d5",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getFeeCampaign",
+              "overrides": null,
+              "scope": 75,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 39,
+                "name": "ParameterList",
+                "src": "597:2:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 46,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 40,
+                        "name": "ElementaryTypeName",
+                        "src": "621:7:0"
+                      }
+                    ],
+                    "id": 41,
+                    "name": "VariableDeclaration",
+                    "src": "621:7:0"
+                  }
+                ],
+                "id": 42,
+                "name": "ParameterList",
+                "src": "620:9:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 42
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "overloadedDeclarations": [
+                            null
+                          ],
+                          "referencedDeclaration": 24,
+                          "type": "uint256",
+                          "value": "_feeCampaign"
+                        },
+                        "id": 43,
+                        "name": "Identifier",
+                        "src": "648:12:0"
+                      }
+                    ],
+                    "id": 44,
+                    "name": "Return",
+                    "src": "641:19:0"
+                  }
+                ],
+                "id": 45,
+                "name": "Block",
+                "src": "630:38:0"
+              }
+            ],
+            "id": 46,
+            "name": "FunctionDefinition",
+            "src": "574:94:0"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "functionSelector": "5205c364",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "changeFeeCampaign",
+              "overrides": null,
+              "scope": 75,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "value",
+                      "overrides": null,
+                      "scope": 56,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 47,
+                        "name": "ElementaryTypeName",
+                        "src": "703:7:0"
+                      }
+                    ],
+                    "id": 48,
+                    "name": "VariableDeclaration",
+                    "src": "703:13:0"
+                  }
+                ],
+                "id": 49,
+                "name": "ParameterList",
+                "src": "702:15:0"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 50,
+                "name": "ParameterList",
+                "src": "725:0:0"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 24,
+                              "type": "uint256",
+                              "value": "_feeCampaign"
+                            },
+                            "id": 51,
+                            "name": "Identifier",
+                            "src": "736:12:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 48,
+                              "type": "uint256",
+                              "value": "value"
+                            },
+                            "id": 52,
+                            "name": "Identifier",
+                            "src": "751:5:0"
+                          }
+                        ],
+                        "id": 53,
+                        "name": "Assignment",
+                        "src": "736:20:0"
+                      }
+                    ],
+                    "id": 54,
+                    "name": "ExpressionStatement",
+                    "src": "736:20:0"
+                  }
+                ],
+                "id": 55,
+                "name": "Block",
+                "src": "725:39:0"
+              }
+            ],
+            "id": 56,
+            "name": "FunctionDefinition",
+            "src": "676:88:0"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "functionSelector": "006fd991",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getFeeCampaignCancel",
+              "overrides": null,
+              "scope": 75,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 57,
+                "name": "ParameterList",
+                "src": "805:2:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 64,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 58,
+                        "name": "ElementaryTypeName",
+                        "src": "829:7:0"
+                      }
+                    ],
+                    "id": 59,
+                    "name": "VariableDeclaration",
+                    "src": "829:7:0"
+                  }
+                ],
+                "id": 60,
+                "name": "ParameterList",
+                "src": "828:9:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 60
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "overloadedDeclarations": [
+                            null
+                          ],
+                          "referencedDeclaration": 26,
+                          "type": "uint256",
+                          "value": "_feeCampaignCancel"
+                        },
+                        "id": 61,
+                        "name": "Identifier",
+                        "src": "856:18:0"
+                      }
+                    ],
+                    "id": 62,
+                    "name": "Return",
+                    "src": "849:25:0"
+                  }
+                ],
+                "id": 63,
+                "name": "Block",
+                "src": "838:44:0"
+              }
+            ],
+            "id": 64,
+            "name": "FunctionDefinition",
+            "src": "776:106:0"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "functionSelector": "c2975e45",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "changeFeeCampaignCancel",
+              "overrides": null,
+              "scope": 75,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "value",
+                      "overrides": null,
+                      "scope": 74,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 65,
+                        "name": "ElementaryTypeName",
+                        "src": "923:7:0"
+                      }
+                    ],
+                    "id": 66,
+                    "name": "VariableDeclaration",
+                    "src": "923:13:0"
+                  }
+                ],
+                "id": 67,
+                "name": "ParameterList",
+                "src": "922:15:0"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 68,
+                "name": "ParameterList",
+                "src": "945:0:0"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 26,
+                              "type": "uint256",
+                              "value": "_feeCampaignCancel"
+                            },
+                            "id": 69,
+                            "name": "Identifier",
+                            "src": "956:18:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 66,
+                              "type": "uint256",
+                              "value": "value"
+                            },
+                            "id": 70,
+                            "name": "Identifier",
+                            "src": "977:5:0"
+                          }
+                        ],
+                        "id": 71,
+                        "name": "Assignment",
+                        "src": "956:26:0"
+                      }
+                    ],
+                    "id": 72,
+                    "name": "ExpressionStatement",
+                    "src": "956:26:0"
+                  }
+                ],
+                "id": 73,
+                "name": "Block",
+                "src": "945:45:0"
+              }
+            ],
+            "id": 74,
+            "name": "FunctionDefinition",
+            "src": "890:100:0"
+          }
+        ],
+        "id": 75,
+        "name": "ContractDefinition",
+        "src": "129:864:0"
+      }
+    ],
+    "id": 76,
+    "name": "SourceUnit",
+    "src": "33:960:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.0+commit.9e61f92b.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.3",
+  "updatedAt": "2021-02-04T06:58:14.513Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
