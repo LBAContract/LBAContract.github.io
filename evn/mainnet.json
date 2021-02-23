@@ -1,5 +1,5 @@
 {
-    "RPC_ENDPOINT": "https://testnet.tomochain.com",
+    "RPC_ENDPOINT": "https://rpc.testnet.tomochain.com",
     "NETWORK_ID": "89",
     "SUPPORT_ADDRESS": "0x6f88E265C683845B3a87C54657ca79Ee9d979338",
     "MIN_FEE": "1.0",
