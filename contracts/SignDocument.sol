@@ -12,11 +12,17 @@ contract SignDocument{
 
     mapping(bytes32 => Document) public documents; 
 
+    event Add(bytes id, address indexed from, string comment);
+    event Sign(bytes id, address indexed from, string comment);
+
     function addDocument(bytes memory id) public {
-        require(!documents[keccak256(id)].isExist, "Document is Exist");
+        if(!documents[keccak256(id)].isExist){
+            emit Add(id, msg.sender, "Document is Exist");
+            revert("Document is Exist");
+        } 
         address[] memory sender = new address[](1);
-        sender[0] = msg.sender;
-        documents[keccak256(id)] = Document(block.timestamp, abi.encodePacked(block.timestamp, id, sender[0]), sender, true);
+        documents[keccak256(id)] = Document(block.timestamp, abi.encodePacked(block.timestamp, id, msg.sender), sender, true);
+        emit Add(id, msg.sender, "Document Added");
     }
 
     function signDocument(bytes memory id) public {
@@ -28,10 +34,11 @@ contract SignDocument{
                 break;
             }
         }
-
         if(!checkDulicate){
             documents[keccak256(id)].signatures.push(msg.sender);
+            emit Sign(id, msg.sender, "Document Signed");
         }
+        emit Sign(id, msg.sender, "Document already Signed");
     }
     
     function getSignatures(bytes memory id) public view returns (address[] memory) {
