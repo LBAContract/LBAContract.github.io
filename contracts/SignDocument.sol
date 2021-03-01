@@ -16,7 +16,7 @@ contract SignDocument{
     event Sign(bytes id, address indexed from, string comment);
 
     function addDocument(bytes memory id) public {
-        if(!documents[keccak256(id)].isExist){
+        if(documents[keccak256(id)].isExist){
             emit Add(id, msg.sender, "Document is Exist");
             revert("Document is Exist");
         } 
@@ -26,7 +26,10 @@ contract SignDocument{
     }
 
     function signDocument(bytes memory id) public {
-        require(documents[keccak256(id)].isExist, "Document is not Exist");
+        if(!documents[keccak256(id)].isExist){
+            emit Sign(id, msg.sender, "Document is not Exist"); 
+            revert("Document is not Exist");
+        }
         bool checkDulicate = false;
         for(uint i = 0; i < documents[keccak256(id)].signatures.length; i++){
             if(keccak256(abi.encodePacked(documents[keccak256(id)].signatures[i])) == keccak256(abi.encodePacked(msg.sender))){
