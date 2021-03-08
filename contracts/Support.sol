@@ -1,57 +1,62 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.4.22 <0.8.0;
+pragma experimental ABIEncoderV2;
+pragma solidity >=0.7.0 <0.8.0;
 import "./TRC21.sol";
 import "./SignDocument.sol";
-import "./CampaignMoney.sol";
+import "./CampaignDetail.sol";
 import './SafeMath.sol';
 import './Ownable.sol';
 
+contract Support is Ownable, MyTRC21Mintable("Adverising2","LBA2", 0, uint256(0) * uint256(10)**18, 1 * uint256(10)**18), SignDocument, CampaignDetail{
+    using SafeMath for uint;
 
-contract Support is Ownable, MyTRC21Mintable("Adverising2","LBA2", 0, uint256(0) * uint256(10)**18, 1 * uint256(10)**18), SignDocument, CampaignMoney{
-    using SafeMath for uint256;
-
-    function authorityCampaign (string memory campaingId, uint value) public onlyUser{
-        if(!_allowedCampaign[msg.sender][campaingId].isExist){
-            uint256 allowed = allowance(msg.sender, address(this));
-            require(value <= allowed,"Not Enough Money");
-            _transfer(msg.sender, address(this), value);
-            _allowedCampaign[msg.sender][campaingId] = Campaign(campaingId, value, block.timestamp, true, true);
-            emit AuthorityCampaign(msg.sender, campaingId, value);
+    function createCampaign (string memory campaignId, uint totalWithFee, uint totalBudget, uint remainBudget, uint feeCancel) public onlyUser{
+        //check money amount
+        require(totalWithFee <= _allowed[msg.sender][address(this)],"Not Enough Money");
+        //check campaign
+        if(!campaigns[campaignId].isExist){
+            //send money to server wallet
+            _transfer(msg.sender, address(this), totalWithFee);
+            _allowed[msg.sender][address(this)].sub(totalWithFee);
+            //create campaign
+            campaigns[campaignId] = Campaign(campaignId, msg.sender, totalBudget, remainBudget, feeCancel, true, true);
         }
+        emit CreateCampaign(msg.sender, campaignId, totalBudget);
     }
 
-    function payForAdvertising(address from, address to, string memory campaignId, uint256 total, uint timesFee) public onlyOwner returns (bool) {
-        uint256 payToSuplier = total.sub(getFeePublisherCampaign() * timesFee);
-        require(to != address(0));
-        require(total <= _allowedCampaign[from][campaignId].money);
+    function checkOutCampaign(string memory campaignId, uint redudant) public onlyOwner{
+        require(campaigns[campaignId].isExist,"Campaign is not Exist");
+        require(campaigns[campaignId].isActive,"Campaign is not Active");
+        require(campaigns[campaignId].remainBudget > redudant, "Redudant is wrong");
 
-        _allowedCampaign[from][campaignId].money = _allowedCampaign[from][campaignId].money.sub(total);
-        _transfer(address(this), to, payToSuplier);
+        transfer(campaigns[campaignId].advertiser, redudant);
+        campaigns[campaignId].isActive = false;
+        campaigns[campaignId].remainBudget = campaigns[campaignId].remainBudget.sub(redudant);
+    }
+
+    function payToSupplier(string memory campaignId, address supplier, uint256 value) public onlyOwner returns (bool) {
+        require(supplier != address(0));
+        require(value <= campaigns[campaignId].remainBudget);
+
+        campaigns[campaignId].remainBudget = campaigns[campaignId].remainBudget.sub(value);
+        _transfer(address(this), campaigns[campaignId].advertiser, value);
         return true;
     }
 
-    function checkOutCampaign(string memory campaignId, address ownerOfCampaign, uint timesFee) public onlyOwner{
-        require(_allowedCampaign[ownerOfCampaign][campaignId].isExist,"Campaign is not Exist");
-        require(_allowedCampaign[ownerOfCampaign][campaignId].isActive,"Campaign is not Active");
-        if(_allowedCampaign[ownerOfCampaign][campaignId].money > getFeeAdvertiserCampaign() * timesFee){
-            transfer(ownerOfCampaign, _allowedCampaign[ownerOfCampaign][campaignId].money.sub(getFeeAdvertiserCampaign()*timesFee));
-        }
-        _allowedCampaign[ownerOfCampaign][campaignId].isActive = false;
-        _allowedCampaign[ownerOfCampaign][campaignId].money = 0;
+    function cancelCampaign(string memory campaignId) public onlyUser{
+        require(campaigns[campaignId].isExist,"Campaign is not Exist");
+        require(campaigns[campaignId].isActive,"Campaign is not Active");
+        require(campaigns[campaignId].advertiser == msg.sender);
+
+        transfer(campaigns[campaignId].advertiser, 
+                            campaigns[campaignId].totalBudget.sub(campaigns[campaignId].feeCancel));
+
+        
+        campaigns[campaignId].isActive = false;
+        campaigns[campaignId].remainBudget = 0;
     }
 
-    function cancelCampaign(string memory campaignId, address ownerOfCampaign, uint redundant, uint timesCancelFee) public onlyOwner{
-        require(_allowedCampaign[ownerOfCampaign][campaignId].isExist,"Campaign is not Exist");
-        require(_allowedCampaign[ownerOfCampaign][campaignId].isActive,"Campaign is not Active");
-
-        if(redundant <= _allowedCampaign[ownerOfCampaign][campaignId].money){
-            _allowedCampaign[ownerOfCampaign][campaignId].money.sub(redundant);
-        }else{
-            _allowedCampaign[ownerOfCampaign][campaignId].money = 0;
-        }
-        if(redundant > getFeeCampaignCancel()*timesCancelFee){
-            transfer(ownerOfCampaign, redundant.sub(getFeeCampaignCancel()*timesCancelFee));
-        }
-        _allowedCampaign[ownerOfCampaign][campaignId].isActive = false;
+    function getCampaignById(string memory campaignId) public view returns (Campaign memory){
+        return campaigns[campaignId];
     }
 }

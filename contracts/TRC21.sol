@@ -39,7 +39,7 @@ contract TRC21 is ITRC21 {
     mapping (address => uint256) private _balances;
     uint256 private _minFee;
     address private _issuer;
-    mapping (address => mapping (address => uint256)) private _allowed;
+    mapping (address => mapping (address => uint256)) internal _allowed;
     uint256 private _totalSupply;
 
     /**
