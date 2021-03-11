@@ -1,9 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.7.0 <0.8.0;
-pragma experimental ABIEncoderV2;
-import './Ownable.sol';
 
-contract CampaignDetail is Ownable{
+contract CampaignDetail{
     
     struct Campaign {
         string campaignId;
