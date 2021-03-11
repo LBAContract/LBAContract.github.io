@@ -1,13 +1,13 @@
 {
   "contractName": "Roles",
   "abi": [],
-  "metadata": "{\"compiler\":{\"version\":\"0.7.0+commit.9e61f92b\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/D/CN9/Capstone/LBAContract.github.io/contracts/Ownable.sol\":\"Roles\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/D/CN9/Capstone/LBAContract.github.io/contracts/Ownable.sol\":{\"keccak256\":\"0xcc9d25525f7f7a1adc694c085a6c66ee35f7b7757a279081c2d3509cb5ec1392\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ec08aa4a20db0e4c8b731d9fa7f099fced29757e6a5d62847b7a08383dde1292\",\"dweb:/ipfs/QmQFGu15ZbUgq61P6QhxLS9E27fdgwjP7a4yB3Hb3HJnui\"]}},\"version\":1}",
-  "bytecode": "0x60566023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212206633fa4372e5a11c770f20b85a965a2766c651ecc5d92e052ef8b6a911980ff664736f6c63430007000033",
-  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212206633fa4372e5a11c770f20b85a965a2766c651ecc5d92e052ef8b6a911980ff664736f6c63430007000033",
+  "metadata": "{\"compiler\":{\"version\":\"0.7.0+commit.9e61f92b\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/D/CN9/Capstone/LBAContract.github.io/contracts/Ownable.sol\":\"Roles\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/D/CN9/Capstone/LBAContract.github.io/contracts/Ownable.sol\":{\"keccak256\":\"0x524477ad7da6f760dc91aa2df127a3cffa1610d5950c82d92d8b08b69cc9c49b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5099c94208ece50a56b99f97c9382b4a6bfe585d44fd224640ae123a02f164c9\",\"dweb:/ipfs/QmStmRQN73tfqp6KJzt3D32SLz73Ey8RL9QaxPRxXCjtST\"]}},\"version\":1}",
+  "bytecode": "0x60566023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220a5878b509f31ddd98bbbea8cfcddcd8c76e1f60e3476ca3489aa3a316bf83c0164736f6c63430007000033",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220a5878b509f31ddd98bbbea8cfcddcd8c76e1f60e3476ca3489aa3a316bf83c0164736f6c63430007000033",
   "immutableReferences": {},
   "sourceMap": "67:955:2:-:0;;;;;;;;;;;;;;;;;;;;;;;;;",
   "deployedSourceMap": "67:955:2:-:0;;;;;;;;",
-  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.4.22 <0.8.0;\r\nlibrary Roles {\r\n  \r\n    struct Role {\r\n\t\taddress owner;\r\n\t\tmapping (string => mapping (address  => bool)) members;\r\n\t}\r\n\r\n\t/**\r\n\t * @dev give an account access to this role\r\n\t */\r\n\tfunction add(Role storage role, address account, string memory roleType) internal {\r\n\t\trequire(account != address(0));\r\n\t\trequire(!has(role, account, roleType));\r\n\r\n\t\trole.members[roleType][account] = true;\r\n\t}\r\n\r\n\t/**\r\n\t * @dev remove an account's access to this role\r\n\t */\r\n\tfunction remove(Role storage role, address account, string memory roleType) internal {\r\n\t\trequire(account != address(0));\r\n\t\trequire(has(role, account, roleType));\r\n\r\n\t\trole.members[roleType][account] = false;\r\n\t}\r\n\r\n\t/**\r\n\t * @dev check if an account has this role\r\n\t * @return bool\r\n\t */\r\n\tfunction has(Role storage role, address account, string memory roleType)\r\n\tinternal\r\n\tview\r\n\treturns (bool)\r\n\t{\r\n\t\trequire(account != address(0));\r\n\t\treturn role.members[roleType][account];\r\n\t}\r\n\r\n    \r\n}\r\n\r\ncontract AccessControl {\r\n    using Roles for Roles.Role;\r\n    Roles.Role internal role;\r\n    \r\n    constructor() {\r\n      role.owner = msg.sender;\r\n      role.members[\"Admin\"][msg.sender] = true;\r\n      role.members[\"Minter\"][msg.sender] = true;\r\n    }\r\n    \r\n    modifier onlyOwner() {\r\n\t\trequire(isOwner(msg.sender));\r\n\t\t_;\r\n\t}\r\n\r\n\tmodifier onlyUser() {\r\n\t\trequire(!isOwner(msg.sender) && !isRole(msg.sender, \"Admin\") && !isRole(msg.sender, \"Minter\"));\r\n\t\t_;\r\n\t}\r\n\t\r\n\tmodifier onlyAdmin() {\r\n\t\trequire(isRole(msg.sender, \"Admin\"));\r\n\t\t_;\r\n\t}\r\n\t\r\n\tmodifier onlyMinter() {\r\n\t\trequire(isRole(msg.sender, \"Minter\"));\r\n\t\t_;\r\n\t}\r\n\r\n\tfunction isOwner(address account) public view returns (bool) {\r\n\t\treturn account == role.owner;\r\n\t}\r\n\t\r\n\tfunction isRole(address account, string memory roleType) public view returns (bool) {\r\n\t\treturn role.has(account, roleType);\r\n\t}\r\n\t\r\n    function add(address account, string memory roleType) public onlyAdmin {\r\n        if(keccak256(abi.encodePacked((roleType))) == keccak256(abi.encodePacked((\"Minter\")))){\r\n            require(isOwner(msg.sender));\r\n        }\r\n\t\trole.add(account, roleType);\r\n\t}\r\n\r\n    function remove(address account, string memory roleType) public onlyAdmin{\r\n        if(keccak256(abi.encodePacked((roleType))) == keccak256(abi.encodePacked((\"Minter\")))){\r\n            require(isOwner(msg.sender));\r\n        }\r\n\t    role.remove(account, roleType);\r\n\t}\r\n\t\r\n\tfunction changeOwnerRole(address account) public onlyOwner{\r\n\t\trole.owner = account;\r\n\t\trole.add(account, \"Minter\");\r\n\t\trole.add(account, \"Admin\");\r\n\r\n\t    role.remove(msg.sender, \"Minter\");\r\n\t\trole.remove(msg.sender, \"Admin\");\r\n\t}\r\n} ",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.4.22 <0.8.0;\r\nlibrary Roles {\r\n  \r\n    struct Role {\r\n\t\taddress owner;\r\n\t\tmapping (string => mapping (address  => bool)) members;\r\n\t}\r\n\r\n\t/**\r\n\t * @dev give an account access to this role\r\n\t */\r\n\tfunction add(Role storage role, address account, string memory roleType) internal {\r\n\t\trequire(account != address(0));\r\n\t\trequire(!has(role, account, roleType));\r\n\r\n\t\trole.members[roleType][account] = true;\r\n\t}\r\n\r\n\t/**\r\n\t * @dev remove an account's access to this role\r\n\t */\r\n\tfunction remove(Role storage role, address account, string memory roleType) internal {\r\n\t\trequire(account != address(0));\r\n\t\trequire(has(role, account, roleType));\r\n\r\n\t\trole.members[roleType][account] = false;\r\n\t}\r\n\r\n\t/**\r\n\t * @dev check if an account has this role\r\n\t * @return bool\r\n\t */\r\n\tfunction has(Role storage role, address account, string memory roleType)\r\n\tinternal\r\n\tview\r\n\treturns (bool)\r\n\t{\r\n\t\trequire(account != address(0));\r\n\t\treturn role.members[roleType][account];\r\n\t}\r\n\r\n    \r\n}\r\n\r\ncontract AccessControl {\r\n    using Roles for Roles.Role;\r\n    Roles.Role internal role;\r\n    \r\n    constructor() {\r\n      role.owner = msg.sender;\r\n      role.members[\"Admin\"][msg.sender] = true;\r\n      role.members[\"Minter\"][msg.sender] = true;\r\n    }\r\n    \r\n    modifier onlyOwner() {\r\n\t\trequire(isOwner(msg.sender));\r\n\t\t_;\r\n\t}\r\n\r\n\tmodifier onlyUser() {\r\n\t\trequire(!isOwner(msg.sender) && !isRole(msg.sender, \"Admin\") && !isRole(msg.sender, \"Minter\"));\r\n\t\t_;\r\n\t}\r\n\t\r\n\tmodifier onlyAdmin() {\r\n\t\trequire(isRole(msg.sender, \"Admin\"));\r\n\t\t_;\r\n\t}\r\n\t\r\n\tmodifier onlyMinter() {\r\n\t\trequire(isRole(msg.sender, \"Minter\"));\r\n\t\t_;\r\n\t}\r\n\r\n\tfunction isOwner(address account) public view returns (bool) {\r\n\t\treturn account == role.owner;\r\n\t}\r\n\t\r\n\tfunction isRole(address account, string memory roleType) public view returns (bool) {\r\n\t\treturn role.has(account, roleType);\r\n\t}\r\n\t\r\n    function add(address account, string memory roleType) public onlyAdmin {\r\n        if(keccak256(abi.encodePacked((roleType))) == keccak256(abi.encodePacked((\"Minter\")))){\r\n            require(isOwner(msg.sender));\r\n        }\r\n\t\trole.add(account, roleType);\r\n\t}\r\n\r\n    function remove(address account, string memory roleType) public onlyAdmin{\r\n        if(keccak256(abi.encodePacked((roleType))) == keccak256(abi.encodePacked((\"Minter\")))){\r\n            require(isOwner(msg.sender));\r\n        }\r\n\t    role.remove(account, roleType);\r\n\t}\r\n\t\r\n\tfunction _changeOwnerRole(address account) public onlyOwner{\r\n\t\trole.owner = account;\r\n\t\trole.add(account, \"Minter\");\r\n\t\trole.add(account, \"Admin\");\r\n\r\n\t    role.remove(msg.sender, \"Minter\");\r\n\t\trole.remove(msg.sender, \"Admin\");\r\n\t}\r\n} ",
   "sourcePath": "D:\\CN9\\Capstone\\LBAContract.github.io\\contracts\\Ownable.sol",
   "ast": {
     "absolutePath": "/D/CN9/Capstone/LBAContract.github.io/contracts/Ownable.sol",
@@ -4490,7 +4490,7 @@
             "body": {
               "id": 441,
               "nodeType": "Block",
-              "src": "2496:173:2",
+              "src": "2497:173:2",
               "statements": [
                 {
                   "expression": {
@@ -4509,7 +4509,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 193,
-                        "src": "2501:4:2",
+                        "src": "2502:4:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_struct$_Role_$81_storage",
                           "typeString": "struct Roles.Role storage ref"
@@ -4523,7 +4523,7 @@
                       "memberName": "owner",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 74,
-                      "src": "2501:10:2",
+                      "src": "2502:10:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -4538,13 +4538,13 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 400,
-                      "src": "2514:7:2",
+                      "src": "2515:7:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "src": "2501:20:2",
+                    "src": "2502:20:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -4552,7 +4552,7 @@
                   },
                   "id": 410,
                   "nodeType": "ExpressionStatement",
-                  "src": "2501:20:2"
+                  "src": "2502:20:2"
                 },
                 {
                   "expression": {
@@ -4565,7 +4565,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 400,
-                        "src": "2535:7:2",
+                        "src": "2536:7:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -4581,7 +4581,7 @@
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "2544:8:2",
+                        "src": "2545:8:2",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_6e58ad548d72b425ea94c15f453bf26caddb061d82b2551db7fdd3cefe0e9940",
@@ -4608,7 +4608,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 193,
-                        "src": "2526:4:2",
+                        "src": "2527:4:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_struct$_Role_$81_storage",
                           "typeString": "struct Roles.Role storage ref"
@@ -4622,7 +4622,7 @@
                       "memberName": "add",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 120,
-                      "src": "2526:8:2",
+                      "src": "2527:8:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$81_storage_ptr_$_t_address_$_t_string_memory_ptr_$returns$__$bound_to$_t_struct$_Role_$81_storage_ptr_$",
                         "typeString": "function (struct Roles.Role storage pointer,address,string memory)"
@@ -4636,7 +4636,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "2526:27:2",
+                    "src": "2527:27:2",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
@@ -4645,7 +4645,7 @@
                   },
                   "id": 417,
                   "nodeType": "ExpressionStatement",
-                  "src": "2526:27:2"
+                  "src": "2527:27:2"
                 },
                 {
                   "expression": {
@@ -4658,7 +4658,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 400,
-                        "src": "2567:7:2",
+                        "src": "2568:7:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -4674,7 +4674,7 @@
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "2576:7:2",
+                        "src": "2577:7:2",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_a729ef4e25027bc652fc8b5c4d1d902947361fa7c8e7b4905e877823f27331b3",
@@ -4701,7 +4701,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 193,
-                        "src": "2558:4:2",
+                        "src": "2559:4:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_struct$_Role_$81_storage",
                           "typeString": "struct Roles.Role storage ref"
@@ -4715,7 +4715,7 @@
                       "memberName": "add",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 120,
-                      "src": "2558:8:2",
+                      "src": "2559:8:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$81_storage_ptr_$_t_address_$_t_string_memory_ptr_$returns$__$bound_to$_t_struct$_Role_$81_storage_ptr_$",
                         "typeString": "function (struct Roles.Role storage pointer,address,string memory)"
@@ -4729,7 +4729,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "2558:26:2",
+                    "src": "2559:26:2",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
@@ -4738,7 +4738,7 @@
                   },
                   "id": 424,
                   "nodeType": "ExpressionStatement",
-                  "src": "2558:26:2"
+                  "src": "2559:26:2"
                 },
                 {
                   "expression": {
@@ -4753,7 +4753,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": -15,
-                          "src": "2606:3:2",
+                          "src": "2607:3:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
@@ -4767,7 +4767,7 @@
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
-                        "src": "2606:10:2",
+                        "src": "2607:10:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address_payable",
                           "typeString": "address payable"
@@ -4783,7 +4783,7 @@
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "2618:8:2",
+                        "src": "2619:8:2",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_6e58ad548d72b425ea94c15f453bf26caddb061d82b2551db7fdd3cefe0e9940",
@@ -4810,7 +4810,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 193,
-                        "src": "2594:4:2",
+                        "src": "2595:4:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_struct$_Role_$81_storage",
                           "typeString": "struct Roles.Role storage ref"
@@ -4824,7 +4824,7 @@
                       "memberName": "remove",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 158,
-                      "src": "2594:11:2",
+                      "src": "2595:11:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$81_storage_ptr_$_t_address_$_t_string_memory_ptr_$returns$__$bound_to$_t_struct$_Role_$81_storage_ptr_$",
                         "typeString": "function (struct Roles.Role storage pointer,address,string memory)"
@@ -4838,7 +4838,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "2594:33:2",
+                    "src": "2595:33:2",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
@@ -4847,7 +4847,7 @@
                   },
                   "id": 432,
                   "nodeType": "ExpressionStatement",
-                  "src": "2594:33:2"
+                  "src": "2595:33:2"
                 },
                 {
                   "expression": {
@@ -4862,7 +4862,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": -15,
-                          "src": "2644:3:2",
+                          "src": "2645:3:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
@@ -4876,7 +4876,7 @@
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
-                        "src": "2644:10:2",
+                        "src": "2645:10:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address_payable",
                           "typeString": "address payable"
@@ -4892,7 +4892,7 @@
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "2656:7:2",
+                        "src": "2657:7:2",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_a729ef4e25027bc652fc8b5c4d1d902947361fa7c8e7b4905e877823f27331b3",
@@ -4919,7 +4919,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 193,
-                        "src": "2632:4:2",
+                        "src": "2633:4:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_struct$_Role_$81_storage",
                           "typeString": "struct Roles.Role storage ref"
@@ -4933,7 +4933,7 @@
                       "memberName": "remove",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 158,
-                      "src": "2632:11:2",
+                      "src": "2633:11:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$81_storage_ptr_$_t_address_$_t_string_memory_ptr_$returns$__$bound_to$_t_struct$_Role_$81_storage_ptr_$",
                         "typeString": "function (struct Roles.Role storage pointer,address,string memory)"
@@ -4947,7 +4947,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "2632:32:2",
+                    "src": "2633:32:2",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
@@ -4956,12 +4956,12 @@
                   },
                   "id": 440,
                   "nodeType": "ExpressionStatement",
-                  "src": "2632:32:2"
+                  "src": "2633:32:2"
                 }
               ]
             },
             "documentation": null,
-            "functionSelector": "888cadef",
+            "functionSelector": "267945ff",
             "id": 442,
             "implemented": true,
             "kind": "function",
@@ -4976,17 +4976,17 @@
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
                   "referencedDeclaration": 237,
-                  "src": "2487:9:2",
+                  "src": "2488:9:2",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
                     "typeString": "modifier ()"
                   }
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "2487:9:2"
+                "src": "2488:9:2"
               }
             ],
-            "name": "changeOwnerRole",
+            "name": "_changeOwnerRole",
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
@@ -5001,7 +5001,7 @@
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
                   "scope": 442,
-                  "src": "2463:15:2",
+                  "src": "2464:15:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -5012,7 +5012,7 @@
                     "id": 399,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2463:7:2",
+                    "src": "2464:7:2",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -5023,26 +5023,26 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2462:17:2"
+              "src": "2463:17:2"
             },
             "returnParameters": {
               "id": 404,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2496:0:2"
+              "src": "2497:0:2"
             },
             "scope": 443,
-            "src": "2438:231:2",
+            "src": "2438:232:2",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
         "scope": 444,
-        "src": "1026:1646:2"
+        "src": "1026:1647:2"
       }
     ],
-    "src": "33:2640:2"
+    "src": "33:2641:2"
   },
   "legacyAST": {
     "attributes": {
@@ -9880,11 +9880,11 @@
           {
             "attributes": {
               "documentation": null,
-              "functionSelector": "888cadef",
+              "functionSelector": "267945ff",
               "implemented": true,
               "isConstructor": false,
               "kind": "function",
-              "name": "changeOwnerRole",
+              "name": "_changeOwnerRole",
               "overrides": null,
               "scope": 443,
               "stateMutability": "nonpayable",
@@ -9916,17 +9916,17 @@
                         },
                         "id": 399,
                         "name": "ElementaryTypeName",
-                        "src": "2463:7:2"
+                        "src": "2464:7:2"
                       }
                     ],
                     "id": 400,
                     "name": "VariableDeclaration",
-                    "src": "2463:15:2"
+                    "src": "2464:15:2"
                   }
                 ],
                 "id": 401,
                 "name": "ParameterList",
-                "src": "2462:17:2"
+                "src": "2463:17:2"
               },
               {
                 "attributes": {
@@ -9937,7 +9937,7 @@
                 "children": [],
                 "id": 404,
                 "name": "ParameterList",
-                "src": "2496:0:2"
+                "src": "2497:0:2"
               },
               {
                 "attributes": {
@@ -9956,12 +9956,12 @@
                     },
                     "id": 402,
                     "name": "Identifier",
-                    "src": "2487:9:2"
+                    "src": "2488:9:2"
                   }
                 ],
                 "id": 403,
                 "name": "ModifierInvocation",
-                "src": "2487:9:2"
+                "src": "2488:9:2"
               },
               {
                 "children": [
@@ -10002,12 +10002,12 @@
                                 },
                                 "id": 405,
                                 "name": "Identifier",
-                                "src": "2501:4:2"
+                                "src": "2502:4:2"
                               }
                             ],
                             "id": 407,
                             "name": "MemberAccess",
-                            "src": "2501:10:2"
+                            "src": "2502:10:2"
                           },
                           {
                             "attributes": {
@@ -10021,17 +10021,17 @@
                             },
                             "id": 408,
                             "name": "Identifier",
-                            "src": "2514:7:2"
+                            "src": "2515:7:2"
                           }
                         ],
                         "id": 409,
                         "name": "Assignment",
-                        "src": "2501:20:2"
+                        "src": "2502:20:2"
                       }
                     ],
                     "id": 410,
                     "name": "ExpressionStatement",
-                    "src": "2501:20:2"
+                    "src": "2502:20:2"
                   },
                   {
                     "children": [
@@ -10084,12 +10084,12 @@
                                 },
                                 "id": 411,
                                 "name": "Identifier",
-                                "src": "2526:4:2"
+                                "src": "2527:4:2"
                               }
                             ],
                             "id": 413,
                             "name": "MemberAccess",
-                            "src": "2526:8:2"
+                            "src": "2527:8:2"
                           },
                           {
                             "attributes": {
@@ -10103,7 +10103,7 @@
                             },
                             "id": 414,
                             "name": "Identifier",
-                            "src": "2535:7:2"
+                            "src": "2536:7:2"
                           },
                           {
                             "attributes": {
@@ -10120,17 +10120,17 @@
                             },
                             "id": 415,
                             "name": "Literal",
-                            "src": "2544:8:2"
+                            "src": "2545:8:2"
                           }
                         ],
                         "id": 416,
                         "name": "FunctionCall",
-                        "src": "2526:27:2"
+                        "src": "2527:27:2"
                       }
                     ],
                     "id": 417,
                     "name": "ExpressionStatement",
-                    "src": "2526:27:2"
+                    "src": "2527:27:2"
                   },
                   {
                     "children": [
@@ -10183,12 +10183,12 @@
                                 },
                                 "id": 418,
                                 "name": "Identifier",
-                                "src": "2558:4:2"
+                                "src": "2559:4:2"
                               }
                             ],
                             "id": 420,
                             "name": "MemberAccess",
-                            "src": "2558:8:2"
+                            "src": "2559:8:2"
                           },
                           {
                             "attributes": {
@@ -10202,7 +10202,7 @@
                             },
                             "id": 421,
                             "name": "Identifier",
-                            "src": "2567:7:2"
+                            "src": "2568:7:2"
                           },
                           {
                             "attributes": {
@@ -10219,17 +10219,17 @@
                             },
                             "id": 422,
                             "name": "Literal",
-                            "src": "2576:7:2"
+                            "src": "2577:7:2"
                           }
                         ],
                         "id": 423,
                         "name": "FunctionCall",
-                        "src": "2558:26:2"
+                        "src": "2559:26:2"
                       }
                     ],
                     "id": 424,
                     "name": "ExpressionStatement",
-                    "src": "2558:26:2"
+                    "src": "2559:26:2"
                   },
                   {
                     "children": [
@@ -10282,12 +10282,12 @@
                                 },
                                 "id": 425,
                                 "name": "Identifier",
-                                "src": "2594:4:2"
+                                "src": "2595:4:2"
                               }
                             ],
                             "id": 427,
                             "name": "MemberAccess",
-                            "src": "2594:11:2"
+                            "src": "2595:11:2"
                           },
                           {
                             "attributes": {
@@ -10313,12 +10313,12 @@
                                 },
                                 "id": 428,
                                 "name": "Identifier",
-                                "src": "2606:3:2"
+                                "src": "2607:3:2"
                               }
                             ],
                             "id": 429,
                             "name": "MemberAccess",
-                            "src": "2606:10:2"
+                            "src": "2607:10:2"
                           },
                           {
                             "attributes": {
@@ -10335,17 +10335,17 @@
                             },
                             "id": 430,
                             "name": "Literal",
-                            "src": "2618:8:2"
+                            "src": "2619:8:2"
                           }
                         ],
                         "id": 431,
                         "name": "FunctionCall",
-                        "src": "2594:33:2"
+                        "src": "2595:33:2"
                       }
                     ],
                     "id": 432,
                     "name": "ExpressionStatement",
-                    "src": "2594:33:2"
+                    "src": "2595:33:2"
                   },
                   {
                     "children": [
@@ -10398,12 +10398,12 @@
                                 },
                                 "id": 433,
                                 "name": "Identifier",
-                                "src": "2632:4:2"
+                                "src": "2633:4:2"
                               }
                             ],
                             "id": 435,
                             "name": "MemberAccess",
-                            "src": "2632:11:2"
+                            "src": "2633:11:2"
                           },
                           {
                             "attributes": {
@@ -10429,12 +10429,12 @@
                                 },
                                 "id": 436,
                                 "name": "Identifier",
-                                "src": "2644:3:2"
+                                "src": "2645:3:2"
                               }
                             ],
                             "id": 437,
                             "name": "MemberAccess",
-                            "src": "2644:10:2"
+                            "src": "2645:10:2"
                           },
                           {
                             "attributes": {
@@ -10451,37 +10451,37 @@
                             },
                             "id": 438,
                             "name": "Literal",
-                            "src": "2656:7:2"
+                            "src": "2657:7:2"
                           }
                         ],
                         "id": 439,
                         "name": "FunctionCall",
-                        "src": "2632:32:2"
+                        "src": "2633:32:2"
                       }
                     ],
                     "id": 440,
                     "name": "ExpressionStatement",
-                    "src": "2632:32:2"
+                    "src": "2633:32:2"
                   }
                 ],
                 "id": 441,
                 "name": "Block",
-                "src": "2496:173:2"
+                "src": "2497:173:2"
               }
             ],
             "id": 442,
             "name": "FunctionDefinition",
-            "src": "2438:231:2"
+            "src": "2438:232:2"
           }
         ],
         "id": 443,
         "name": "ContractDefinition",
-        "src": "1026:1646:2"
+        "src": "1026:1647:2"
       }
     ],
     "id": 444,
     "name": "SourceUnit",
-    "src": "33:2640:2"
+    "src": "33:2641:2"
   },
   "compiler": {
     "name": "solc",
@@ -10489,7 +10489,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.3",
-  "updatedAt": "2021-03-11T02:47:47.798Z",
+  "updatedAt": "2021-03-11T06:01:06.041Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

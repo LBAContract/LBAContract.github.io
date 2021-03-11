@@ -7,7 +7,7 @@ import './SafeMath.sol';
 import './Ownable.sol';
 import './CampaignDetail.sol';
 
-contract Support is MyTRC21Mintable("Adverising2","LBA2", 0, uint256(0) * uint256(10)**18, 1 * uint256(10)**18), SignDocument, CampaignDetail, AccessControl{
+contract Support is MyTRC21Mintable("Adverising2","LBA2", 0, uint256(0) * uint256(10)**18, uint256(0) * uint256(10)**18), SignDocument, CampaignDetail, AccessControl{
     using SafeMath for uint;
 
     /* BEGIN: Document function*/
@@ -44,14 +44,14 @@ contract Support is MyTRC21Mintable("Adverising2","LBA2", 0, uint256(0) * uint25
         return documents[keccak256(id)].signatures;
     }
 
-    // function checkAdminSigned(bytes memory id) public view returns (bool) {
-    //     for(uint i = 0; i < documents[keccak256(id)].signatures.length; i++){
-    //         if(isRole(documents[keccak256(id)].signatures[i], "Admin")){
-    //             return true;
-    //         }
-    //     }
-    //     return false;
-    // }
+    function checkAdminSigned(bytes memory id) public view returns (bool) {
+        for(uint i = 0; i < documents[keccak256(id)].signatures.length; i++){
+            if(isRole(documents[keccak256(id)].signatures[i], "Admin")){
+                return true;
+            }
+        }
+        return false;
+    }
     /*END: Document function*/
 
     /*BEGIN: Campaign Detail */
@@ -79,6 +79,13 @@ contract Support is MyTRC21Mintable("Adverising2","LBA2", 0, uint256(0) * uint25
         campaigns[campaignId].remainBudget = campaigns[campaignId].remainBudget.sub(redudant);
     }
 
+    /**
+	 * @dev Function to change OwnerOfContract
+	 * @param campaignId The string Identifier of Campaign
+	 * @param supplier The address of suppiler to transfer money
+	 * @param value The value of money to transfer to supplier
+	 * @return A boolean that indicates if the operation was successful.
+	 */
     function payToSupplier(string memory campaignId, address supplier, uint256 value) public onlyAdmin returns (bool) {
         require(supplier != address(0));
         require(value <= campaigns[campaignId].remainBudget);
@@ -88,6 +95,10 @@ contract Support is MyTRC21Mintable("Adverising2","LBA2", 0, uint256(0) * uint25
         return true;
     }
 
+    /**
+	 * @dev Function to change OwnerOfContract
+	 * @param campaignId The string Identifier of Campaign
+	 */
     function cancelCampaign(string memory campaignId) public onlyUser{
         require(campaigns[campaignId].isExist,"Campaign is not Exist");
         require(campaigns[campaignId].isActive,"Campaign is not Active");
@@ -101,12 +112,26 @@ contract Support is MyTRC21Mintable("Adverising2","LBA2", 0, uint256(0) * uint25
         campaigns[campaignId].remainBudget = 0;
     }
 
+    /**
+	 * @dev Function to change OwnerOfContract
+	 * @param campaignId The string Identifier of Campaign
+	 * @return A Campaign will return if there are campaignId 
+	 */
     function getCampaignById(string memory campaignId) public view returns (Campaign memory){
         return campaigns[campaignId];
     }
     /*END: Campaign Detail */
 
     /*START: MyTRC21Mintable */
+
+    /**
+	 * @dev Function to change OwnerOfContract
+	 * @param newOwner The address that will be new Owner.
+	 */
+    function changeOwner(address newOwner) public onlyOwner{
+        _changeIssuer(newOwner);
+        _changeOwnerRole(newOwner);
+    }
     /**
 	 * @dev Function to mint tokens
 	 * @param to The address that will receive the minted tokens.

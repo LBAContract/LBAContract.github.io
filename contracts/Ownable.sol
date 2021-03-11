@@ -95,7 +95,7 @@ contract AccessControl {
 	    role.remove(account, roleType);
 	}
 	
-	function changeOwnerRole(address account) public onlyOwner{
+	function _changeOwnerRole(address account) public onlyOwner{
 		role.owner = account;
 		role.add(account, "Minter");
 		role.add(account, "Admin");
