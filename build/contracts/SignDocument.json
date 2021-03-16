@@ -93,15 +93,15 @@
     "absolutePath": "/D/CN9/Capstone/LBAContract.github.io/contracts/SignDocument.sol",
     "exportedSymbols": {
       "SignDocument": [
-        610
+        655
       ]
     },
-    "id": 611,
+    "id": 656,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 578,
+        "id": 623,
         "literals": [
           "solidity",
           ">=",
@@ -117,10 +117,10 @@
       {
         "absolutePath": "/D/CN9/Capstone/LBAContract.github.io/contracts/TRC21.sol",
         "file": "./TRC21.sol",
-        "id": 579,
+        "id": 624,
         "nodeType": "ImportDirective",
-        "scope": 611,
-        "sourceUnit": 1900,
+        "scope": 656,
+        "sourceUnit": 1992,
         "src": "67:21:4",
         "symbolAliases": [],
         "unitAlias": ""
@@ -132,25 +132,25 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 610,
+        "id": 655,
         "linearizedBaseContracts": [
-          610
+          655
         ],
         "name": "SignDocument",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "SignDocument.Document",
-            "id": 589,
+            "id": 634,
             "members": [
               {
                 "constant": false,
-                "id": 581,
+                "id": 626,
                 "mutability": "mutable",
                 "name": "timestamp",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 589,
+                "scope": 634,
                 "src": "147:14:4",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -159,7 +159,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 580,
+                  "id": 625,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "147:4:4",
@@ -173,12 +173,12 @@
               },
               {
                 "constant": false,
-                "id": 583,
+                "id": 628,
                 "mutability": "mutable",
                 "name": "ipfs_hash",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 589,
+                "scope": 634,
                 "src": "172:15:4",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -187,7 +187,7 @@
                   "typeString": "bytes"
                 },
                 "typeName": {
-                  "id": 582,
+                  "id": 627,
                   "name": "bytes",
                   "nodeType": "ElementaryTypeName",
                   "src": "172:5:4",
@@ -201,12 +201,12 @@
               },
               {
                 "constant": false,
-                "id": 586,
+                "id": 631,
                 "mutability": "mutable",
                 "name": "signatures",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 589,
+                "scope": 634,
                 "src": "198:20:4",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -216,7 +216,7 @@
                 },
                 "typeName": {
                   "baseType": {
-                    "id": 584,
+                    "id": 629,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "198:7:4",
@@ -226,7 +226,7 @@
                       "typeString": "address"
                     }
                   },
-                  "id": 585,
+                  "id": 630,
                   "length": null,
                   "nodeType": "ArrayTypeName",
                   "src": "198:9:4",
@@ -240,12 +240,12 @@
               },
               {
                 "constant": false,
-                "id": 588,
+                "id": 633,
                 "mutability": "mutable",
                 "name": "isExist",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 589,
+                "scope": 634,
                 "src": "229:12:4",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -254,7 +254,7 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 587,
+                  "id": 632,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
                   "src": "229:4:4",
@@ -269,30 +269,30 @@
             ],
             "name": "Document",
             "nodeType": "StructDefinition",
-            "scope": 610,
+            "scope": 655,
             "src": "120:129:4",
             "visibility": "public"
           },
           {
             "constant": false,
             "functionSelector": "2b2805db",
-            "id": 593,
+            "id": 638,
             "mutability": "mutable",
             "name": "documents",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 610,
+            "scope": 655,
             "src": "257:45:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Document_$589_storage_$",
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Document_$634_storage_$",
               "typeString": "mapping(bytes32 => struct SignDocument.Document)"
             },
             "typeName": {
-              "id": 592,
+              "id": 637,
               "keyType": {
-                "id": 590,
+                "id": 635,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
                 "src": "265:7:4",
@@ -304,18 +304,18 @@
               "nodeType": "Mapping",
               "src": "257:28:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Document_$589_storage_$",
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Document_$634_storage_$",
                 "typeString": "mapping(bytes32 => struct SignDocument.Document)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 591,
+                "id": 636,
                 "name": "Document",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 589,
+                "referencedDeclaration": 634,
                 "src": "276:8:4",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_Document_$589_storage_ptr",
+                  "typeIdentifier": "t_struct$_Document_$634_storage_ptr",
                   "typeString": "struct SignDocument.Document"
                 }
               }
@@ -326,22 +326,22 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 601,
+            "id": 646,
             "name": "Add",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 600,
+              "id": 645,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 595,
+                  "id": 640,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "id",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 601,
+                  "scope": 646,
                   "src": "322:8:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -350,7 +350,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 594,
+                    "id": 639,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "322:5:4",
@@ -364,13 +364,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 597,
+                  "id": 642,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "from",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 601,
+                  "scope": 646,
                   "src": "332:20:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -379,7 +379,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 596,
+                    "id": 641,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "332:7:4",
@@ -394,13 +394,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 599,
+                  "id": 644,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "comment",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 601,
+                  "scope": 646,
                   "src": "354:14:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -409,7 +409,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 598,
+                    "id": 643,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "354:6:4",
@@ -429,22 +429,22 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 609,
+            "id": 654,
             "name": "Sign",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 608,
+              "id": 653,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 603,
+                  "id": 648,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "id",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 609,
+                  "scope": 654,
                   "src": "387:8:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -453,7 +453,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 602,
+                    "id": 647,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "387:5:4",
@@ -467,13 +467,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 605,
+                  "id": 650,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "from",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 609,
+                  "scope": 654,
                   "src": "397:20:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -482,7 +482,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 604,
+                    "id": 649,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "397:7:4",
@@ -497,13 +497,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 607,
+                  "id": 652,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "comment",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 609,
+                  "scope": 654,
                   "src": "419:14:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -512,7 +512,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 606,
+                    "id": 651,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "419:6:4",
@@ -530,7 +530,7 @@
             "src": "376:59:4"
           }
         ],
-        "scope": 611,
+        "scope": 656,
         "src": "92:346:4"
       }
     ],
@@ -541,7 +541,7 @@
       "absolutePath": "/D/CN9/Capstone/LBAContract.github.io/contracts/SignDocument.sol",
       "exportedSymbols": {
         "SignDocument": [
-          610
+          655
         ]
       },
       "license": "MIT"
@@ -559,22 +559,22 @@
             ".0"
           ]
         },
-        "id": 578,
+        "id": 623,
         "name": "PragmaDirective",
         "src": "33:32:4"
       },
       {
         "attributes": {
-          "SourceUnit": 1900,
+          "SourceUnit": 1992,
           "absolutePath": "/D/CN9/Capstone/LBAContract.github.io/contracts/TRC21.sol",
           "file": "./TRC21.sol",
-          "scope": 611,
+          "scope": 656,
           "symbolAliases": [
             null
           ],
           "unitAlias": ""
         },
-        "id": 579,
+        "id": 624,
         "name": "ImportDirective",
         "src": "67:21:4"
       },
@@ -591,17 +591,17 @@
           "documentation": null,
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            610
+            655
           ],
           "name": "SignDocument",
-          "scope": 611
+          "scope": 656
         },
         "children": [
           {
             "attributes": {
               "canonicalName": "SignDocument.Document",
               "name": "Document",
-              "scope": 610,
+              "scope": 655,
               "visibility": "public"
             },
             "children": [
@@ -611,7 +611,7 @@
                   "mutability": "mutable",
                   "name": "timestamp",
                   "overrides": null,
-                  "scope": 589,
+                  "scope": 634,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "uint256",
@@ -624,12 +624,12 @@
                       "name": "uint",
                       "type": "uint256"
                     },
-                    "id": 580,
+                    "id": 625,
                     "name": "ElementaryTypeName",
                     "src": "147:4:4"
                   }
                 ],
-                "id": 581,
+                "id": 626,
                 "name": "VariableDeclaration",
                 "src": "147:14:4"
               },
@@ -639,7 +639,7 @@
                   "mutability": "mutable",
                   "name": "ipfs_hash",
                   "overrides": null,
-                  "scope": 589,
+                  "scope": 634,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "bytes",
@@ -652,12 +652,12 @@
                       "name": "bytes",
                       "type": "bytes"
                     },
-                    "id": 582,
+                    "id": 627,
                     "name": "ElementaryTypeName",
                     "src": "172:5:4"
                   }
                 ],
-                "id": 583,
+                "id": 628,
                 "name": "VariableDeclaration",
                 "src": "172:15:4"
               },
@@ -667,7 +667,7 @@
                   "mutability": "mutable",
                   "name": "signatures",
                   "overrides": null,
-                  "scope": 589,
+                  "scope": 634,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "address[]",
@@ -687,17 +687,17 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 584,
+                        "id": 629,
                         "name": "ElementaryTypeName",
                         "src": "198:7:4"
                       }
                     ],
-                    "id": 585,
+                    "id": 630,
                     "name": "ArrayTypeName",
                     "src": "198:9:4"
                   }
                 ],
-                "id": 586,
+                "id": 631,
                 "name": "VariableDeclaration",
                 "src": "198:20:4"
               },
@@ -707,7 +707,7 @@
                   "mutability": "mutable",
                   "name": "isExist",
                   "overrides": null,
-                  "scope": 589,
+                  "scope": 634,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "bool",
@@ -720,17 +720,17 @@
                       "name": "bool",
                       "type": "bool"
                     },
-                    "id": 587,
+                    "id": 632,
                     "name": "ElementaryTypeName",
                     "src": "229:4:4"
                   }
                 ],
-                "id": 588,
+                "id": 633,
                 "name": "VariableDeclaration",
                 "src": "229:12:4"
               }
             ],
-            "id": 589,
+            "id": 634,
             "name": "StructDefinition",
             "src": "120:129:4"
           },
@@ -741,7 +741,7 @@
               "mutability": "mutable",
               "name": "documents",
               "overrides": null,
-              "scope": 610,
+              "scope": 655,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "mapping(bytes32 => struct SignDocument.Document)",
@@ -759,7 +759,7 @@
                       "name": "bytes32",
                       "type": "bytes32"
                     },
-                    "id": 590,
+                    "id": 635,
                     "name": "ElementaryTypeName",
                     "src": "265:7:4"
                   },
@@ -767,20 +767,20 @@
                     "attributes": {
                       "contractScope": null,
                       "name": "Document",
-                      "referencedDeclaration": 589,
+                      "referencedDeclaration": 634,
                       "type": "struct SignDocument.Document"
                     },
-                    "id": 591,
+                    "id": 636,
                     "name": "UserDefinedTypeName",
                     "src": "276:8:4"
                   }
                 ],
-                "id": 592,
+                "id": 637,
                 "name": "Mapping",
                 "src": "257:28:4"
               }
             ],
-            "id": 593,
+            "id": 638,
             "name": "VariableDeclaration",
             "src": "257:45:4"
           },
@@ -800,7 +800,7 @@
                       "mutability": "mutable",
                       "name": "id",
                       "overrides": null,
-                      "scope": 601,
+                      "scope": 646,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "bytes",
@@ -813,12 +813,12 @@
                           "name": "bytes",
                           "type": "bytes"
                         },
-                        "id": 594,
+                        "id": 639,
                         "name": "ElementaryTypeName",
                         "src": "322:5:4"
                       }
                     ],
-                    "id": 595,
+                    "id": 640,
                     "name": "VariableDeclaration",
                     "src": "322:8:4"
                   },
@@ -829,7 +829,7 @@
                       "mutability": "mutable",
                       "name": "from",
                       "overrides": null,
-                      "scope": 601,
+                      "scope": 646,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -843,12 +843,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 596,
+                        "id": 641,
                         "name": "ElementaryTypeName",
                         "src": "332:7:4"
                       }
                     ],
-                    "id": 597,
+                    "id": 642,
                     "name": "VariableDeclaration",
                     "src": "332:20:4"
                   },
@@ -859,7 +859,7 @@
                       "mutability": "mutable",
                       "name": "comment",
                       "overrides": null,
-                      "scope": 601,
+                      "scope": 646,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "string",
@@ -872,22 +872,22 @@
                           "name": "string",
                           "type": "string"
                         },
-                        "id": 598,
+                        "id": 643,
                         "name": "ElementaryTypeName",
                         "src": "354:6:4"
                       }
                     ],
-                    "id": 599,
+                    "id": 644,
                     "name": "VariableDeclaration",
                     "src": "354:14:4"
                   }
                 ],
-                "id": 600,
+                "id": 645,
                 "name": "ParameterList",
                 "src": "321:48:4"
               }
             ],
-            "id": 601,
+            "id": 646,
             "name": "EventDefinition",
             "src": "312:58:4"
           },
@@ -907,7 +907,7 @@
                       "mutability": "mutable",
                       "name": "id",
                       "overrides": null,
-                      "scope": 609,
+                      "scope": 654,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "bytes",
@@ -920,12 +920,12 @@
                           "name": "bytes",
                           "type": "bytes"
                         },
-                        "id": 602,
+                        "id": 647,
                         "name": "ElementaryTypeName",
                         "src": "387:5:4"
                       }
                     ],
-                    "id": 603,
+                    "id": 648,
                     "name": "VariableDeclaration",
                     "src": "387:8:4"
                   },
@@ -936,7 +936,7 @@
                       "mutability": "mutable",
                       "name": "from",
                       "overrides": null,
-                      "scope": 609,
+                      "scope": 654,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -950,12 +950,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 604,
+                        "id": 649,
                         "name": "ElementaryTypeName",
                         "src": "397:7:4"
                       }
                     ],
-                    "id": 605,
+                    "id": 650,
                     "name": "VariableDeclaration",
                     "src": "397:20:4"
                   },
@@ -966,7 +966,7 @@
                       "mutability": "mutable",
                       "name": "comment",
                       "overrides": null,
-                      "scope": 609,
+                      "scope": 654,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "string",
@@ -979,32 +979,32 @@
                           "name": "string",
                           "type": "string"
                         },
-                        "id": 606,
+                        "id": 651,
                         "name": "ElementaryTypeName",
                         "src": "419:6:4"
                       }
                     ],
-                    "id": 607,
+                    "id": 652,
                     "name": "VariableDeclaration",
                     "src": "419:14:4"
                   }
                 ],
-                "id": 608,
+                "id": 653,
                 "name": "ParameterList",
                 "src": "386:48:4"
               }
             ],
-            "id": 609,
+            "id": 654,
             "name": "EventDefinition",
             "src": "376:59:4"
           }
         ],
-        "id": 610,
+        "id": 655,
         "name": "ContractDefinition",
         "src": "92:346:4"
       }
     ],
-    "id": 611,
+    "id": 656,
     "name": "SourceUnit",
     "src": "33:405:4"
   },
@@ -1014,7 +1014,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.3",
-  "updatedAt": "2021-03-11T06:01:06.055Z",
+  "updatedAt": "2021-03-16T07:20:36.579Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

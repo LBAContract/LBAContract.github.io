@@ -11,6 +11,10 @@ contract Support is MyTRC21Mintable("Adverising2","LBA2", 0, uint256(0) * uint25
     using SafeMath for uint;
 
     /* BEGIN: Document function*/
+    /**
+	 * @dev Function to add Document to verify
+	 * @param id The security Hash of documents.
+	 */
     function addDocument(bytes memory id) public {
         if(documents[keccak256(id)].isExist){
             emit Add(id, msg.sender, "Document is Exist");
@@ -21,7 +25,12 @@ contract Support is MyTRC21Mintable("Adverising2","LBA2", 0, uint256(0) * uint25
         emit Add(id, msg.sender, "Document Added");
     }
 
+    /**
+	 * @dev Function to sign to Document to verify.
+	 * @param id The security Hash of documents.
+	 */
     function signDocument(bytes memory id) public {
+        require(!isRole(msg.sender,"Minter") && !isOwner(msg.sender) && !isRole(msg.sender, "Server"));
         if(!documents[keccak256(id)].isExist){
             emit Sign(id, msg.sender, "Document is not Exist"); 
             revert("Document is not Exist");
@@ -39,11 +48,21 @@ contract Support is MyTRC21Mintable("Adverising2","LBA2", 0, uint256(0) * uint25
         }
         emit Sign(id, msg.sender, "Document already Signed");
     }
-    
+
+    /**
+	 * @dev Function to get all signature of document by Security hash of document
+	 * @param id The security Hash of documents.
+	 * @return Array of address of signed
+	 */
     function getSignatures(bytes memory id) public view returns (address[] memory) {
         return documents[keccak256(id)].signatures;
     }
 
+    /**
+	 * @dev Function to check Admin Sign
+	 * @param id The security Hash of documents.
+	 * @return A boolean that verifier admin is signed this document. True is admin signed.
+	 */
     function checkAdminSigned(bytes memory id) public view returns (bool) {
         for(uint i = 0; i < documents[keccak256(id)].signatures.length; i++){
             if(isRole(documents[keccak256(id)].signatures[i], "Admin")){
@@ -55,6 +74,15 @@ contract Support is MyTRC21Mintable("Adverising2","LBA2", 0, uint256(0) * uint25
     /*END: Document function*/
 
     /*BEGIN: Campaign Detail */
+    
+    /**
+	 * @dev Function to Create Campaign
+	 * @param campaignId The string Identifier of Campaign.
+	 * @param totalWithFee This is all money of campaign include all fee.
+	 * @param totalBudget This is Budget of campaign.
+	 * @param remainBudget This is money after minus fee
+	 * @param feeCancel This is fee to cancel campaign.
+	 */
     function createCampaign (string memory campaignId, uint totalWithFee, uint totalBudget, uint remainBudget, uint feeCancel) public{
         //check money amount
         require(totalWithFee <= _allowed[msg.sender][address(this)],"Not Enough Money");
@@ -69,7 +97,12 @@ contract Support is MyTRC21Mintable("Adverising2","LBA2", 0, uint256(0) * uint25
         emit CreateCampaign(msg.sender, campaignId, totalBudget);
     }
 
-    function checkOutCampaign(string memory campaignId, uint redudant) public onlyAdmin{
+    /**
+	 * @dev Function to CheckOut Campaign
+	 * @param campaignId The string Identifier of Campaign.
+	 * @param redudant The address of suppiler to transfer money.
+	 */
+    function checkOutCampaign(string memory campaignId, uint redudant) public onlyServer{
         require(campaigns[campaignId].isExist,"Campaign is not Exist");
         require(campaigns[campaignId].isActive,"Campaign is not Active");
         require(campaigns[campaignId].remainBudget > redudant, "Redudant is wrong");
@@ -80,23 +113,24 @@ contract Support is MyTRC21Mintable("Adverising2","LBA2", 0, uint256(0) * uint25
     }
 
     /**
-	 * @dev Function to change OwnerOfContract
+	 * @dev Function to Pay To Supplier
 	 * @param campaignId The string Identifier of Campaign
 	 * @param supplier The address of suppiler to transfer money
 	 * @param value The value of money to transfer to supplier
 	 * @return A boolean that indicates if the operation was successful.
 	 */
-    function payToSupplier(string memory campaignId, address supplier, uint256 value) public onlyAdmin returns (bool) {
+    function payToSupplier(string memory campaignId, string memory paymentKey, address supplier, uint256 value) public onlyServer returns (bool) {
         require(supplier != address(0));
         require(value <= campaigns[campaignId].remainBudget);
-
+        require(!checkPayed[campaignId][paymentKey]);
         campaigns[campaignId].remainBudget = campaigns[campaignId].remainBudget.sub(value);
         _transfer(address(this), campaigns[campaignId].advertiser, value);
+        checkPayed[campaignId][paymentKey] = true;
         return true;
     }
 
     /**
-	 * @dev Function to change OwnerOfContract
+	 * @dev Function to Cancel Campaign
 	 * @param campaignId The string Identifier of Campaign
 	 */
     function cancelCampaign(string memory campaignId) public onlyUser{
@@ -113,7 +147,7 @@ contract Support is MyTRC21Mintable("Adverising2","LBA2", 0, uint256(0) * uint25
     }
 
     /**
-	 * @dev Function to change OwnerOfContract
+	 * @dev Function to Get Campaign By Id
 	 * @param campaignId The string Identifier of Campaign
 	 * @return A Campaign will return if there are campaignId 
 	 */

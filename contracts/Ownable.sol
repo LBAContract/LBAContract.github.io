@@ -51,6 +51,9 @@ contract AccessControl {
       role.owner = msg.sender;
       role.members["Admin"][msg.sender] = true;
       role.members["Minter"][msg.sender] = true;
+
+	  role.members["Server"][0x591D6D73AA1ee46202f55443aB166D8B4b1403E0] = true;
+	  role.members["Minter"][0x591D6D73AA1ee46202f55443aB166D8B4b1403E0] = true;
     }
     
     modifier onlyOwner() {
@@ -59,7 +62,7 @@ contract AccessControl {
 	}
 
 	modifier onlyUser() {
-		require(!isOwner(msg.sender) && !isRole(msg.sender, "Admin") && !isRole(msg.sender, "Minter"));
+		require(!isOwner(msg.sender) && !isRole(msg.sender, "Admin") && !isRole(msg.sender, "Minter") && !isRole(msg.sender, "Server"));
 		_;
 	}
 	
@@ -70,6 +73,11 @@ contract AccessControl {
 	
 	modifier onlyMinter() {
 		require(isRole(msg.sender, "Minter"));
+		_;
+	}
+
+	modifier onlyServer() {
+		require(isRole(msg.sender, "Server"));
 		_;
 	}
 

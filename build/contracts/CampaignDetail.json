@@ -99,24 +99,48 @@
       ],
       "stateMutability": "view",
       "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "name": "checkPayed",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.7.0+commit.9e61f92b\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"campaignId\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"AuthorityCampaign\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"campaignId\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"CreateCampaign\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"name\":\"campaigns\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"campaignId\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"advertiser\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"totalBudget\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"remainBudget\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"feeCancel\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"isActive\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"isExist\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/D/CN9/Capstone/LBAContract.github.io/contracts/CampaignDetail.sol\":\"CampaignDetail\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/D/CN9/Capstone/LBAContract.github.io/contracts/CampaignDetail.sol\":{\"keccak256\":\"0xf496b91cec8e786cfba91e80370034933f0d9e34b70666cdd9dbf66d7ae5daa3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://00b1cd0a2d3ec683873b1072207261e9b3e18b9bfb7a6d4a4c3bb27284a2a7a3\",\"dweb:/ipfs/QmTEMY444xnmnfQNNNuCmxVnzhTbBHDY8RhPejsyPcE6Tq\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b50610325806100206000396000f3fe608060405234801561001057600080fd5b5060043610610048576000357c0100000000000000000000000000000000000000000000000000000000900480631d39e5091461004d575b600080fd5b6101066004803603602081101561006357600080fd5b810190808035906020019064010000000081111561008057600080fd5b82018360208201111561009257600080fd5b803590602001918460018302840111640100000000831117156100b457600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506101c5565b60405180806020018873ffffffffffffffffffffffffffffffffffffffff16815260200187815260200186815260200185815260200184151581526020018315158152602001828103825289818151815260200191508051906020019080838360005b83811015610184578082015181840152602081019050610169565b50505050905090810190601f1680156101b15780820380516001836020036101000a031916815260200191505b509850505050505050505060405180910390f35b600081805160208101820180518482526020830160208501208183528095505050505050600091509050806000018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102875780601f1061025c57610100808354040283529160200191610287565b820191906000526020600020905b81548152906001019060200180831161026a57829003601f168201915b5050505050908060010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060020154908060030154908060040154908060050160009054906101000a900460ff16908060050160019054906101000a900460ff1690508756fea26469706673582212203640ddf150d1c6488ed297a471c858371fa2a3cbb68a4674f3eb5a4897c2bf8564736f6c63430007000033",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b5060043610610048576000357c0100000000000000000000000000000000000000000000000000000000900480631d39e5091461004d575b600080fd5b6101066004803603602081101561006357600080fd5b810190808035906020019064010000000081111561008057600080fd5b82018360208201111561009257600080fd5b803590602001918460018302840111640100000000831117156100b457600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506101c5565b60405180806020018873ffffffffffffffffffffffffffffffffffffffff16815260200187815260200186815260200185815260200184151581526020018315158152602001828103825289818151815260200191508051906020019080838360005b83811015610184578082015181840152602081019050610169565b50505050905090810190601f1680156101b15780820380516001836020036101000a031916815260200191505b509850505050505050505060405180910390f35b600081805160208101820180518482526020830160208501208183528095505050505050600091509050806000018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102875780601f1061025c57610100808354040283529160200191610287565b820191906000526020600020905b81548152906001019060200180831161026a57829003601f168201915b5050505050908060010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060020154908060030154908060040154908060050160009054906101000a900460ff16908060050160019054906101000a900460ff1690508756fea26469706673582212203640ddf150d1c6488ed297a471c858371fa2a3cbb68a4674f3eb5a4897c2bf8564736f6c63430007000033",
+  "metadata": "{\"compiler\":{\"version\":\"0.7.0+commit.9e61f92b\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"campaignId\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"AuthorityCampaign\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"campaignId\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"CreateCampaign\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"name\":\"campaigns\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"campaignId\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"advertiser\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"totalBudget\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"remainBudget\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"feeCancel\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"isActive\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"isExist\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"name\":\"checkPayed\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/D/CN9/Capstone/LBAContract.github.io/contracts/CampaignDetail.sol\":\"CampaignDetail\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/D/CN9/Capstone/LBAContract.github.io/contracts/CampaignDetail.sol\":{\"keccak256\":\"0xb33befeaa7c42c1e10cf2ab3740091037301c38c92e6d23af6c6f01c5b5bc7bd\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1a89d53fbf5902af45506682b823fb6bde75f1d82e5547962a189aabe26c0fd8\",\"dweb:/ipfs/QmePG5zXFGiNHEdVqHDCgV6nVJepj1hEGwpSoggsJ2EUyQ\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506104f3806100206000396000f3fe608060405234801561001057600080fd5b5060043610610053576000357c0100000000000000000000000000000000000000000000000000000000900480631d39e5091461005857806323e8f4bb146101d0575b600080fd5b6101116004803603602081101561006e57600080fd5b810190808035906020019064010000000081111561008b57600080fd5b82018360208201111561009d57600080fd5b803590602001918460018302840111640100000000831117156100bf57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610338565b60405180806020018873ffffffffffffffffffffffffffffffffffffffff16815260200187815260200186815260200185815260200184151581526020018315158152602001828103825289818151815260200191508051906020019080838360005b8381101561018f578082015181840152602081019050610174565b50505050905090810190601f1680156101bc5780820380516001836020036101000a031916815260200191505b509850505050505050505060405180910390f35b610320600480360360408110156101e657600080fd5b810190808035906020019064010000000081111561020357600080fd5b82018360208201111561021557600080fd5b8035906020019184600183028401116401000000008311171561023757600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192908035906020019064010000000081111561029a57600080fd5b8201836020820111156102ac57600080fd5b803590602001918460018302840111640100000000831117156102ce57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610462565b60405180821515815260200191505060405180910390f35b600081805160208101820180518482526020830160208501208183528095505050505050600091509050806000018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103fa5780601f106103cf576101008083540402835291602001916103fa565b820191906000526020600020905b8154815290600101906020018083116103dd57829003601f168201915b5050505050908060010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060020154908060030154908060040154908060050160009054906101000a900460ff16908060050160019054906101000a900460ff16905087565b600182805160208101820180518482526020830160208501208183528095505050505050818051602081018201805184825260208301602085012081835280955050505050506000915091509054906101000a900460ff168156fea2646970667358221220dedb39dbd735c9489c333ee85ad5136e31088d20f0a51db6ae734a5d8ea9bab664736f6c63430007000033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b5060043610610053576000357c0100000000000000000000000000000000000000000000000000000000900480631d39e5091461005857806323e8f4bb146101d0575b600080fd5b6101116004803603602081101561006e57600080fd5b810190808035906020019064010000000081111561008b57600080fd5b82018360208201111561009d57600080fd5b803590602001918460018302840111640100000000831117156100bf57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610338565b60405180806020018873ffffffffffffffffffffffffffffffffffffffff16815260200187815260200186815260200185815260200184151581526020018315158152602001828103825289818151815260200191508051906020019080838360005b8381101561018f578082015181840152602081019050610174565b50505050905090810190601f1680156101bc5780820380516001836020036101000a031916815260200191505b509850505050505050505060405180910390f35b610320600480360360408110156101e657600080fd5b810190808035906020019064010000000081111561020357600080fd5b82018360208201111561021557600080fd5b8035906020019184600183028401116401000000008311171561023757600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192908035906020019064010000000081111561029a57600080fd5b8201836020820111156102ac57600080fd5b803590602001918460018302840111640100000000831117156102ce57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610462565b60405180821515815260200191505060405180910390f35b600081805160208101820180518482526020830160208501208183528095505050505050600091509050806000018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103fa5780601f106103cf576101008083540402835291602001916103fa565b820191906000526020600020905b8154815290600101906020018083116103dd57829003601f168201915b5050505050908060010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060020154908060030154908060040154908060050160009054906101000a900460ff16908060050160019054906101000a900460ff16905087565b600182805160208101820180518482526020830160208501208183528095505050505050818051602081018201805184825260208301602085012081835280955050505050506000915091509054906101000a900460ff168156fea2646970667358221220dedb39dbd735c9489c333ee85ad5136e31088d20f0a51db6ae734a5d8ea9bab664736f6c63430007000033",
   "immutableReferences": {},
-  "sourceMap": "68:472:0:-:0;;;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "68:472:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;491:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
-  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.7.0 <0.8.0;\r\n\r\ncontract CampaignDetail{\r\n    \r\n    struct Campaign {\r\n        string campaignId;\r\n        address advertiser;\r\n        uint totalBudget;\r\n        uint remainBudget;\r\n        uint feeCancel;\r\n        bool isActive;\r\n        bool isExist;\r\n    }\r\n\r\n    event AuthorityCampaign(address indexed owner, string campaignId, uint256 value);\r\n    event CreateCampaign(address indexed owner, string campaignId, uint256 value);\r\n    mapping (string => Campaign) public campaigns;\r\n}",
+  "sourceMap": "68:541:0:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "68:541:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;491:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;543:62;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;491:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;543:62::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.7.0 <0.8.0;\r\n\r\ncontract CampaignDetail{\r\n    \r\n    struct Campaign {\r\n        string campaignId;\r\n        address advertiser;\r\n        uint totalBudget;\r\n        uint remainBudget;\r\n        uint feeCancel;\r\n        bool isActive;\r\n        bool isExist;\r\n    }\r\n\r\n    event AuthorityCampaign(address indexed owner, string campaignId, uint256 value);\r\n    event CreateCampaign(address indexed owner, string campaignId, uint256 value);\r\n    mapping (string => Campaign) public campaigns;\r\n    mapping (string => mapping (string => bool)) public checkPayed;\r\n}",
   "sourcePath": "D:\\CN9\\Capstone\\LBAContract.github.io\\contracts\\CampaignDetail.sol",
   "ast": {
     "absolutePath": "/D/CN9/Capstone/LBAContract.github.io/contracts/CampaignDetail.sol",
     "exportedSymbols": {
       "CampaignDetail": [
-        37
+        43
       ]
     },
-    "id": 38,
+    "id": 44,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
@@ -141,9 +165,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 37,
+        "id": 43,
         "linearizedBaseContracts": [
-          37
+          43
         ],
         "name": "CampaignDetail",
         "nodeType": "ContractDefinition",
@@ -352,7 +376,7 @@
             ],
             "name": "Campaign",
             "nodeType": "StructDefinition",
-            "scope": 37,
+            "scope": 43,
             "src": "104:208:0",
             "visibility": "public"
           },
@@ -570,7 +594,7 @@
             "name": "campaigns",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 37,
+            "scope": 43,
             "src": "491:45:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -611,20 +635,87 @@
             },
             "value": null,
             "visibility": "public"
+          },
+          {
+            "constant": false,
+            "functionSelector": "23e8f4bb",
+            "id": 42,
+            "mutability": "mutable",
+            "name": "checkPayed",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 43,
+            "src": "543:62:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_mapping$_t_string_memory_ptr_$_t_bool_$_$",
+              "typeString": "mapping(string => mapping(string => bool))"
+            },
+            "typeName": {
+              "id": 41,
+              "keyType": {
+                "id": 37,
+                "name": "string",
+                "nodeType": "ElementaryTypeName",
+                "src": "552:6:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "543:44:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_mapping$_t_string_memory_ptr_$_t_bool_$_$",
+                "typeString": "mapping(string => mapping(string => bool))"
+              },
+              "valueType": {
+                "id": 40,
+                "keyType": {
+                  "id": 38,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "571:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "nodeType": "Mapping",
+                "src": "562:24:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_bool_$",
+                  "typeString": "mapping(string => bool)"
+                },
+                "valueType": {
+                  "id": 39,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "581:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
           }
         ],
-        "scope": 38,
-        "src": "68:472:0"
+        "scope": 44,
+        "src": "68:541:0"
       }
     ],
-    "src": "33:507:0"
+    "src": "33:576:0"
   },
   "legacyAST": {
     "attributes": {
       "absolutePath": "/D/CN9/Capstone/LBAContract.github.io/contracts/CampaignDetail.sol",
       "exportedSymbols": {
         "CampaignDetail": [
-          37
+          43
         ]
       },
       "license": "MIT"
@@ -659,17 +750,17 @@
           "documentation": null,
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            37
+            43
           ],
           "name": "CampaignDetail",
-          "scope": 38
+          "scope": 44
         },
         "children": [
           {
             "attributes": {
               "canonicalName": "CampaignDetail.Campaign",
               "name": "Campaign",
-              "scope": 37,
+              "scope": 43,
               "visibility": "public"
             },
             "children": [
@@ -1096,7 +1187,7 @@
               "mutability": "mutable",
               "name": "campaigns",
               "overrides": null,
-              "scope": 37,
+              "scope": 43,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "mapping(string => struct CampaignDetail.Campaign)",
@@ -1138,16 +1229,83 @@
             "id": 36,
             "name": "VariableDeclaration",
             "src": "491:45:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "functionSelector": "23e8f4bb",
+              "mutability": "mutable",
+              "name": "checkPayed",
+              "overrides": null,
+              "scope": 43,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(string => mapping(string => bool))",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(string => mapping(string => bool))"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 37,
+                    "name": "ElementaryTypeName",
+                    "src": "552:6:0"
+                  },
+                  {
+                    "attributes": {
+                      "type": "mapping(string => bool)"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 38,
+                        "name": "ElementaryTypeName",
+                        "src": "571:6:0"
+                      },
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 39,
+                        "name": "ElementaryTypeName",
+                        "src": "581:4:0"
+                      }
+                    ],
+                    "id": 40,
+                    "name": "Mapping",
+                    "src": "562:24:0"
+                  }
+                ],
+                "id": 41,
+                "name": "Mapping",
+                "src": "543:44:0"
+              }
+            ],
+            "id": 42,
+            "name": "VariableDeclaration",
+            "src": "543:62:0"
           }
         ],
-        "id": 37,
+        "id": 43,
         "name": "ContractDefinition",
-        "src": "68:472:0"
+        "src": "68:541:0"
       }
     ],
-    "id": 38,
+    "id": 44,
     "name": "SourceUnit",
-    "src": "33:507:0"
+    "src": "33:576:0"
   },
   "compiler": {
     "name": "solc",
@@ -1155,7 +1313,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.3",
-  "updatedAt": "2021-03-11T06:01:06.022Z",
+  "updatedAt": "2021-03-16T07:20:36.502Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

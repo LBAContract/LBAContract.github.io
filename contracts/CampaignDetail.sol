@@ -16,4 +16,5 @@ contract CampaignDetail{
     event AuthorityCampaign(address indexed owner, string campaignId, uint256 value);
     event CreateCampaign(address indexed owner, string campaignId, uint256 value);
     mapping (string => Campaign) public campaigns;
+    mapping (string => mapping (string => bool)) public checkPayed;
 }
