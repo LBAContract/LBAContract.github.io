@@ -133,7 +133,7 @@ contract Support is MyTRC21Mintable("Adverising2","LBA2", 0, uint256(0) * uint25
 	 * @dev Function to Cancel Campaign
 	 * @param campaignId The string Identifier of Campaign
 	 */
-    function cancelCampaign(string memory campaignId) public onlyUser returns(uint){
+    function cancelCampaign(string memory campaignId) public onlyUser{
         require(campaigns[campaignId].isExist,"Campaign is not Exist");
         require(campaigns[campaignId].isActive,"Campaign is not Active");
         require(campaigns[campaignId].advertiser == msg.sender);
@@ -144,8 +144,6 @@ contract Support is MyTRC21Mintable("Adverising2","LBA2", 0, uint256(0) * uint25
         
         campaigns[campaignId].isActive = false;
         campaigns[campaignId].remainBudget = 0;
-
-        return campaigns[campaignId].feeCancel;
     }
 
     /**

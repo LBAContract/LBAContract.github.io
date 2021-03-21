@@ -120,7 +120,7 @@
         "id": 624,
         "nodeType": "ImportDirective",
         "scope": 656,
-        "sourceUnit": 1999,
+        "sourceUnit": 1992,
         "src": "67:21:4",
         "symbolAliases": [],
         "unitAlias": ""
@@ -565,7 +565,7 @@
       },
       {
         "attributes": {
-          "SourceUnit": 1999,
+          "SourceUnit": 1992,
           "absolutePath": "/D/CN9/Capstone/LBAContract.github.io/contracts/TRC21.sol",
           "file": "./TRC21.sol",
           "scope": 656,
@@ -1014,7 +1014,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.3",
-  "updatedAt": "2021-03-21T03:06:35.619Z",
+  "updatedAt": "2021-03-21T04:20:37.172Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
