@@ -18,7 +18,8 @@
  *
  */
 
-const HDWalletProvider = require('@truffle/hdwallet-provider');
+// const HDWalletProvider = require('@truffle/hdwallet-provider');
+var HDWalletProvider = require("truffle-hdwallet-provider");
 const mnemonic = "news short develop pizza edge hill income goat all rally tube tent";
 // const infuraKey = "fj4jll3k.....";
 //

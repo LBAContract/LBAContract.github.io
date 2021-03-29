@@ -125,14 +125,14 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.7.0+commit.9e61f92b\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"campaignId\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"AuthorityCampaign\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"campaignId\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"CreateCampaign\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"name\":\"campaigns\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"campaignId\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"advertiser\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"totalBudget\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"remainBudget\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"feeCancel\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"isActive\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"isExist\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"name\":\"checkPayed\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/D/CN9/Capstone/LBAContract.github.io/contracts/CampaignDetail.sol\":\"CampaignDetail\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/D/CN9/Capstone/LBAContract.github.io/contracts/CampaignDetail.sol\":{\"keccak256\":\"0xb33befeaa7c42c1e10cf2ab3740091037301c38c92e6d23af6c6f01c5b5bc7bd\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1a89d53fbf5902af45506682b823fb6bde75f1d82e5547962a189aabe26c0fd8\",\"dweb:/ipfs/QmePG5zXFGiNHEdVqHDCgV6nVJepj1hEGwpSoggsJ2EUyQ\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b506104f3806100206000396000f3fe608060405234801561001057600080fd5b5060043610610053576000357c0100000000000000000000000000000000000000000000000000000000900480631d39e5091461005857806323e8f4bb146101d0575b600080fd5b6101116004803603602081101561006e57600080fd5b810190808035906020019064010000000081111561008b57600080fd5b82018360208201111561009d57600080fd5b803590602001918460018302840111640100000000831117156100bf57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610338565b60405180806020018873ffffffffffffffffffffffffffffffffffffffff16815260200187815260200186815260200185815260200184151581526020018315158152602001828103825289818151815260200191508051906020019080838360005b8381101561018f578082015181840152602081019050610174565b50505050905090810190601f1680156101bc5780820380516001836020036101000a031916815260200191505b509850505050505050505060405180910390f35b610320600480360360408110156101e657600080fd5b810190808035906020019064010000000081111561020357600080fd5b82018360208201111561021557600080fd5b8035906020019184600183028401116401000000008311171561023757600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192908035906020019064010000000081111561029a57600080fd5b8201836020820111156102ac57600080fd5b803590602001918460018302840111640100000000831117156102ce57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610462565b60405180821515815260200191505060405180910390f35b600081805160208101820180518482526020830160208501208183528095505050505050600091509050806000018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103fa5780601f106103cf576101008083540402835291602001916103fa565b820191906000526020600020905b8154815290600101906020018083116103dd57829003601f168201915b5050505050908060010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060020154908060030154908060040154908060050160009054906101000a900460ff16908060050160019054906101000a900460ff16905087565b600182805160208101820180518482526020830160208501208183528095505050505050818051602081018201805184825260208301602085012081835280955050505050506000915091509054906101000a900460ff168156fea2646970667358221220dedb39dbd735c9489c333ee85ad5136e31088d20f0a51db6ae734a5d8ea9bab664736f6c63430007000033",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b5060043610610053576000357c0100000000000000000000000000000000000000000000000000000000900480631d39e5091461005857806323e8f4bb146101d0575b600080fd5b6101116004803603602081101561006e57600080fd5b810190808035906020019064010000000081111561008b57600080fd5b82018360208201111561009d57600080fd5b803590602001918460018302840111640100000000831117156100bf57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610338565b60405180806020018873ffffffffffffffffffffffffffffffffffffffff16815260200187815260200186815260200185815260200184151581526020018315158152602001828103825289818151815260200191508051906020019080838360005b8381101561018f578082015181840152602081019050610174565b50505050905090810190601f1680156101bc5780820380516001836020036101000a031916815260200191505b509850505050505050505060405180910390f35b610320600480360360408110156101e657600080fd5b810190808035906020019064010000000081111561020357600080fd5b82018360208201111561021557600080fd5b8035906020019184600183028401116401000000008311171561023757600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192908035906020019064010000000081111561029a57600080fd5b8201836020820111156102ac57600080fd5b803590602001918460018302840111640100000000831117156102ce57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610462565b60405180821515815260200191505060405180910390f35b600081805160208101820180518482526020830160208501208183528095505050505050600091509050806000018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103fa5780601f106103cf576101008083540402835291602001916103fa565b820191906000526020600020905b8154815290600101906020018083116103dd57829003601f168201915b5050505050908060010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060020154908060030154908060040154908060050160009054906101000a900460ff16908060050160019054906101000a900460ff16905087565b600182805160208101820180518482526020830160208501208183528095505050505050818051602081018201805184825260208301602085012081835280955050505050506000915091509054906101000a900460ff168156fea2646970667358221220dedb39dbd735c9489c333ee85ad5136e31088d20f0a51db6ae734a5d8ea9bab664736f6c63430007000033",
+  "metadata": "{\"compiler\":{\"version\":\"0.7.0+commit.9e61f92b\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"campaignId\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"AuthorityCampaign\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"campaignId\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"CreateCampaign\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"name\":\"campaigns\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"campaignId\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"advertiser\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"totalBudget\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"remainBudget\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"feeCancel\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"isActive\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"isExist\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"name\":\"checkPayed\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/D/CN9/Capstone/LBAContract.github.io/contracts/CampaignDetail.sol\":\"CampaignDetail\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/D/CN9/Capstone/LBAContract.github.io/contracts/CampaignDetail.sol\":{\"keccak256\":\"0x1a03ae69dc76895be00293bfe06a18f7ae580014b38ccc02edcb7c90f281fd6f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6eb8000272325a588f66b743ca02a16417f4ad8cbcc31ab158cc7685e55aa4ed\",\"dweb:/ipfs/QmSMpM38Pv4qhKTvLWFwdYzKFetxYh7DWucdU5cHfUzKbp\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506104f3806100206000396000f3fe608060405234801561001057600080fd5b5060043610610053576000357c0100000000000000000000000000000000000000000000000000000000900480631d39e5091461005857806323e8f4bb146101d0575b600080fd5b6101116004803603602081101561006e57600080fd5b810190808035906020019064010000000081111561008b57600080fd5b82018360208201111561009d57600080fd5b803590602001918460018302840111640100000000831117156100bf57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610338565b60405180806020018873ffffffffffffffffffffffffffffffffffffffff16815260200187815260200186815260200185815260200184151581526020018315158152602001828103825289818151815260200191508051906020019080838360005b8381101561018f578082015181840152602081019050610174565b50505050905090810190601f1680156101bc5780820380516001836020036101000a031916815260200191505b509850505050505050505060405180910390f35b610320600480360360408110156101e657600080fd5b810190808035906020019064010000000081111561020357600080fd5b82018360208201111561021557600080fd5b8035906020019184600183028401116401000000008311171561023757600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192908035906020019064010000000081111561029a57600080fd5b8201836020820111156102ac57600080fd5b803590602001918460018302840111640100000000831117156102ce57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610462565b60405180821515815260200191505060405180910390f35b600081805160208101820180518482526020830160208501208183528095505050505050600091509050806000018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103fa5780601f106103cf576101008083540402835291602001916103fa565b820191906000526020600020905b8154815290600101906020018083116103dd57829003601f168201915b5050505050908060010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060020154908060030154908060040154908060050160009054906101000a900460ff16908060050160019054906101000a900460ff16905087565b600182805160208101820180518482526020830160208501208183528095505050505050818051602081018201805184825260208301602085012081835280955050505050506000915091509054906101000a900460ff168156fea26469706673582212207d74a5e7f46a1a01d0c22bddbf795fbedf7f2ad4f7848e270f673d80bafba19764736f6c63430007000033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b5060043610610053576000357c0100000000000000000000000000000000000000000000000000000000900480631d39e5091461005857806323e8f4bb146101d0575b600080fd5b6101116004803603602081101561006e57600080fd5b810190808035906020019064010000000081111561008b57600080fd5b82018360208201111561009d57600080fd5b803590602001918460018302840111640100000000831117156100bf57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610338565b60405180806020018873ffffffffffffffffffffffffffffffffffffffff16815260200187815260200186815260200185815260200184151581526020018315158152602001828103825289818151815260200191508051906020019080838360005b8381101561018f578082015181840152602081019050610174565b50505050905090810190601f1680156101bc5780820380516001836020036101000a031916815260200191505b509850505050505050505060405180910390f35b610320600480360360408110156101e657600080fd5b810190808035906020019064010000000081111561020357600080fd5b82018360208201111561021557600080fd5b8035906020019184600183028401116401000000008311171561023757600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192908035906020019064010000000081111561029a57600080fd5b8201836020820111156102ac57600080fd5b803590602001918460018302840111640100000000831117156102ce57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610462565b60405180821515815260200191505060405180910390f35b600081805160208101820180518482526020830160208501208183528095505050505050600091509050806000018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103fa5780601f106103cf576101008083540402835291602001916103fa565b820191906000526020600020905b8154815290600101906020018083116103dd57829003601f168201915b5050505050908060010160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060020154908060030154908060040154908060050160009054906101000a900460ff16908060050160019054906101000a900460ff16905087565b600182805160208101820180518482526020830160208501208183528095505050505050818051602081018201805184825260208301602085012081835280955050505050506000915091509054906101000a900460ff168156fea26469706673582212207d74a5e7f46a1a01d0c22bddbf795fbedf7f2ad4f7848e270f673d80bafba19764736f6c63430007000033",
   "immutableReferences": {},
-  "sourceMap": "68:541:0:-:0;;;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "68:541:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;491:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;543:62;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;491:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;543:62::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
-  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.7.0 <0.8.0;\r\n\r\ncontract CampaignDetail{\r\n    \r\n    struct Campaign {\r\n        string campaignId;\r\n        address advertiser;\r\n        uint totalBudget;\r\n        uint remainBudget;\r\n        uint feeCancel;\r\n        bool isActive;\r\n        bool isExist;\r\n    }\r\n\r\n    event AuthorityCampaign(address indexed owner, string campaignId, uint256 value);\r\n    event CreateCampaign(address indexed owner, string campaignId, uint256 value);\r\n    mapping (string => Campaign) public campaigns;\r\n    mapping (string => mapping (string => bool)) public checkPayed;\r\n}",
-  "sourcePath": "D:/CN9/Capstone/LBAContract.github.io/contracts/CampaignDetail.sol",
+  "sourceMap": "65:525:0:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "65:525:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;474:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;525:62;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;474:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;525:62::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.7.0 <0.8.0;\n\ncontract CampaignDetail{\n    \n    struct Campaign {\n        string campaignId;\n        address advertiser;\n        uint totalBudget;\n        uint remainBudget;\n        uint feeCancel;\n        bool isActive;\n        bool isExist;\n    }\n\n    event AuthorityCampaign(address indexed owner, string campaignId, uint256 value);\n    event CreateCampaign(address indexed owner, string campaignId, uint256 value);\n    mapping (string => Campaign) public campaigns;\n    mapping (string => mapping (string => bool)) public checkPayed;\n}",
+  "sourcePath": "D:\\CN9\\Capstone\\LBAContract.github.io\\contracts\\CampaignDetail.sol",
   "ast": {
     "absolutePath": "/D/CN9/Capstone/LBAContract.github.io/contracts/CampaignDetail.sol",
     "exportedSymbols": {
@@ -156,7 +156,7 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "33:31:0"
+        "src": "32:31:0"
       },
       {
         "abstract": false,
@@ -184,7 +184,7 @@
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
                 "scope": 16,
-                "src": "131:17:0",
+                "src": "125:17:0",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -195,7 +195,7 @@
                   "id": 2,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "131:6:0",
+                  "src": "125:6:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -212,7 +212,7 @@
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
                 "scope": 16,
-                "src": "159:18:0",
+                "src": "152:18:0",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -223,7 +223,7 @@
                   "id": 4,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "159:7:0",
+                  "src": "152:7:0",
                   "stateMutability": "nonpayable",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
@@ -241,7 +241,7 @@
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
                 "scope": 16,
-                "src": "188:16:0",
+                "src": "180:16:0",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -252,7 +252,7 @@
                   "id": 6,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "188:4:0",
+                  "src": "180:4:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -269,7 +269,7 @@
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
                 "scope": 16,
-                "src": "215:17:0",
+                "src": "206:17:0",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -280,7 +280,7 @@
                   "id": 8,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "215:4:0",
+                  "src": "206:4:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -297,7 +297,7 @@
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
                 "scope": 16,
-                "src": "243:14:0",
+                "src": "233:14:0",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -308,7 +308,7 @@
                   "id": 10,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "243:4:0",
+                  "src": "233:4:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -325,7 +325,7 @@
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
                 "scope": 16,
-                "src": "268:13:0",
+                "src": "257:13:0",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -336,7 +336,7 @@
                   "id": 12,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
-                  "src": "268:4:0",
+                  "src": "257:4:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_bool",
                     "typeString": "bool"
@@ -353,7 +353,7 @@
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
                 "scope": 16,
-                "src": "292:12:0",
+                "src": "280:12:0",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -364,7 +364,7 @@
                   "id": 14,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
-                  "src": "292:4:0",
+                  "src": "280:4:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_bool",
                     "typeString": "bool"
@@ -377,7 +377,7 @@
             "name": "Campaign",
             "nodeType": "StructDefinition",
             "scope": 43,
-            "src": "104:208:0",
+            "src": "99:200:0",
             "visibility": "public"
           },
           {
@@ -399,7 +399,7 @@
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
                   "scope": 24,
-                  "src": "344:21:0",
+                  "src": "329:21:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -410,7 +410,7 @@
                     "id": 17,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "344:7:0",
+                    "src": "329:7:0",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -429,7 +429,7 @@
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
                   "scope": 24,
-                  "src": "367:17:0",
+                  "src": "352:17:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -440,7 +440,7 @@
                     "id": 19,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "367:6:0",
+                    "src": "352:6:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -458,7 +458,7 @@
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
                   "scope": 24,
-                  "src": "386:13:0",
+                  "src": "371:13:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -469,7 +469,7 @@
                     "id": 21,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "386:7:0",
+                    "src": "371:7:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -479,9 +479,9 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "343:57:0"
+              "src": "328:57:0"
             },
-            "src": "320:81:0"
+            "src": "305:81:0"
           },
           {
             "anonymous": false,
@@ -502,7 +502,7 @@
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
                   "scope": 32,
-                  "src": "428:21:0",
+                  "src": "412:21:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -513,7 +513,7 @@
                     "id": 25,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "428:7:0",
+                    "src": "412:7:0",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -532,7 +532,7 @@
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
                   "scope": 32,
-                  "src": "451:17:0",
+                  "src": "435:17:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -543,7 +543,7 @@
                     "id": 27,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "451:6:0",
+                    "src": "435:6:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -561,7 +561,7 @@
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
                   "scope": 32,
-                  "src": "470:13:0",
+                  "src": "454:13:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -572,7 +572,7 @@
                     "id": 29,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "470:7:0",
+                    "src": "454:7:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -582,9 +582,9 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "427:57:0"
+              "src": "411:57:0"
             },
-            "src": "407:78:0"
+            "src": "391:78:0"
           },
           {
             "constant": false,
@@ -595,7 +595,7 @@
             "nodeType": "VariableDeclaration",
             "overrides": null,
             "scope": 43,
-            "src": "491:45:0",
+            "src": "474:45:0",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -608,14 +608,14 @@
                 "id": 33,
                 "name": "string",
                 "nodeType": "ElementaryTypeName",
-                "src": "500:6:0",
+                "src": "483:6:0",
                 "typeDescriptions": {
                   "typeIdentifier": "t_string_storage_ptr",
                   "typeString": "string"
                 }
               },
               "nodeType": "Mapping",
-              "src": "491:28:0",
+              "src": "474:28:0",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Campaign_$16_storage_$",
                 "typeString": "mapping(string => struct CampaignDetail.Campaign)"
@@ -626,7 +626,7 @@
                 "name": "Campaign",
                 "nodeType": "UserDefinedTypeName",
                 "referencedDeclaration": 16,
-                "src": "510:8:0",
+                "src": "493:8:0",
                 "typeDescriptions": {
                   "typeIdentifier": "t_struct$_Campaign_$16_storage_ptr",
                   "typeString": "struct CampaignDetail.Campaign"
@@ -645,7 +645,7 @@
             "nodeType": "VariableDeclaration",
             "overrides": null,
             "scope": 43,
-            "src": "543:62:0",
+            "src": "525:62:0",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -658,14 +658,14 @@
                 "id": 37,
                 "name": "string",
                 "nodeType": "ElementaryTypeName",
-                "src": "552:6:0",
+                "src": "534:6:0",
                 "typeDescriptions": {
                   "typeIdentifier": "t_string_storage_ptr",
                   "typeString": "string"
                 }
               },
               "nodeType": "Mapping",
-              "src": "543:44:0",
+              "src": "525:44:0",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_mapping$_t_string_memory_ptr_$_t_bool_$_$",
                 "typeString": "mapping(string => mapping(string => bool))"
@@ -676,14 +676,14 @@
                   "id": 38,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "571:6:0",
+                  "src": "553:6:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
                   }
                 },
                 "nodeType": "Mapping",
-                "src": "562:24:0",
+                "src": "544:24:0",
                 "typeDescriptions": {
                   "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_bool_$",
                   "typeString": "mapping(string => bool)"
@@ -692,7 +692,7 @@
                   "id": 39,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
-                  "src": "581:4:0",
+                  "src": "563:4:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_bool",
                     "typeString": "bool"
@@ -705,10 +705,10 @@
           }
         ],
         "scope": 44,
-        "src": "68:541:0"
+        "src": "65:525:0"
       }
     ],
-    "src": "33:576:0"
+    "src": "32:558:0"
   },
   "legacyAST": {
     "attributes": {
@@ -735,7 +735,7 @@
         },
         "id": 1,
         "name": "PragmaDirective",
-        "src": "33:31:0"
+        "src": "32:31:0"
       },
       {
         "attributes": {
@@ -785,12 +785,12 @@
                     },
                     "id": 2,
                     "name": "ElementaryTypeName",
-                    "src": "131:6:0"
+                    "src": "125:6:0"
                   }
                 ],
                 "id": 3,
                 "name": "VariableDeclaration",
-                "src": "131:17:0"
+                "src": "125:17:0"
               },
               {
                 "attributes": {
@@ -814,12 +814,12 @@
                     },
                     "id": 4,
                     "name": "ElementaryTypeName",
-                    "src": "159:7:0"
+                    "src": "152:7:0"
                   }
                 ],
                 "id": 5,
                 "name": "VariableDeclaration",
-                "src": "159:18:0"
+                "src": "152:18:0"
               },
               {
                 "attributes": {
@@ -842,12 +842,12 @@
                     },
                     "id": 6,
                     "name": "ElementaryTypeName",
-                    "src": "188:4:0"
+                    "src": "180:4:0"
                   }
                 ],
                 "id": 7,
                 "name": "VariableDeclaration",
-                "src": "188:16:0"
+                "src": "180:16:0"
               },
               {
                 "attributes": {
@@ -870,12 +870,12 @@
                     },
                     "id": 8,
                     "name": "ElementaryTypeName",
-                    "src": "215:4:0"
+                    "src": "206:4:0"
                   }
                 ],
                 "id": 9,
                 "name": "VariableDeclaration",
-                "src": "215:17:0"
+                "src": "206:17:0"
               },
               {
                 "attributes": {
@@ -898,12 +898,12 @@
                     },
                     "id": 10,
                     "name": "ElementaryTypeName",
-                    "src": "243:4:0"
+                    "src": "233:4:0"
                   }
                 ],
                 "id": 11,
                 "name": "VariableDeclaration",
-                "src": "243:14:0"
+                "src": "233:14:0"
               },
               {
                 "attributes": {
@@ -926,12 +926,12 @@
                     },
                     "id": 12,
                     "name": "ElementaryTypeName",
-                    "src": "268:4:0"
+                    "src": "257:4:0"
                   }
                 ],
                 "id": 13,
                 "name": "VariableDeclaration",
-                "src": "268:13:0"
+                "src": "257:13:0"
               },
               {
                 "attributes": {
@@ -954,17 +954,17 @@
                     },
                     "id": 14,
                     "name": "ElementaryTypeName",
-                    "src": "292:4:0"
+                    "src": "280:4:0"
                   }
                 ],
                 "id": 15,
                 "name": "VariableDeclaration",
-                "src": "292:12:0"
+                "src": "280:12:0"
               }
             ],
             "id": 16,
             "name": "StructDefinition",
-            "src": "104:208:0"
+            "src": "99:200:0"
           },
           {
             "attributes": {
@@ -998,12 +998,12 @@
                         },
                         "id": 17,
                         "name": "ElementaryTypeName",
-                        "src": "344:7:0"
+                        "src": "329:7:0"
                       }
                     ],
                     "id": 18,
                     "name": "VariableDeclaration",
-                    "src": "344:21:0"
+                    "src": "329:21:0"
                   },
                   {
                     "attributes": {
@@ -1027,12 +1027,12 @@
                         },
                         "id": 19,
                         "name": "ElementaryTypeName",
-                        "src": "367:6:0"
+                        "src": "352:6:0"
                       }
                     ],
                     "id": 20,
                     "name": "VariableDeclaration",
-                    "src": "367:17:0"
+                    "src": "352:17:0"
                   },
                   {
                     "attributes": {
@@ -1056,22 +1056,22 @@
                         },
                         "id": 21,
                         "name": "ElementaryTypeName",
-                        "src": "386:7:0"
+                        "src": "371:7:0"
                       }
                     ],
                     "id": 22,
                     "name": "VariableDeclaration",
-                    "src": "386:13:0"
+                    "src": "371:13:0"
                   }
                 ],
                 "id": 23,
                 "name": "ParameterList",
-                "src": "343:57:0"
+                "src": "328:57:0"
               }
             ],
             "id": 24,
             "name": "EventDefinition",
-            "src": "320:81:0"
+            "src": "305:81:0"
           },
           {
             "attributes": {
@@ -1105,12 +1105,12 @@
                         },
                         "id": 25,
                         "name": "ElementaryTypeName",
-                        "src": "428:7:0"
+                        "src": "412:7:0"
                       }
                     ],
                     "id": 26,
                     "name": "VariableDeclaration",
-                    "src": "428:21:0"
+                    "src": "412:21:0"
                   },
                   {
                     "attributes": {
@@ -1134,12 +1134,12 @@
                         },
                         "id": 27,
                         "name": "ElementaryTypeName",
-                        "src": "451:6:0"
+                        "src": "435:6:0"
                       }
                     ],
                     "id": 28,
                     "name": "VariableDeclaration",
-                    "src": "451:17:0"
+                    "src": "435:17:0"
                   },
                   {
                     "attributes": {
@@ -1163,22 +1163,22 @@
                         },
                         "id": 29,
                         "name": "ElementaryTypeName",
-                        "src": "470:7:0"
+                        "src": "454:7:0"
                       }
                     ],
                     "id": 30,
                     "name": "VariableDeclaration",
-                    "src": "470:13:0"
+                    "src": "454:13:0"
                   }
                 ],
                 "id": 31,
                 "name": "ParameterList",
-                "src": "427:57:0"
+                "src": "411:57:0"
               }
             ],
             "id": 32,
             "name": "EventDefinition",
-            "src": "407:78:0"
+            "src": "391:78:0"
           },
           {
             "attributes": {
@@ -1207,7 +1207,7 @@
                     },
                     "id": 33,
                     "name": "ElementaryTypeName",
-                    "src": "500:6:0"
+                    "src": "483:6:0"
                   },
                   {
                     "attributes": {
@@ -1218,17 +1218,17 @@
                     },
                     "id": 34,
                     "name": "UserDefinedTypeName",
-                    "src": "510:8:0"
+                    "src": "493:8:0"
                   }
                 ],
                 "id": 35,
                 "name": "Mapping",
-                "src": "491:28:0"
+                "src": "474:28:0"
               }
             ],
             "id": 36,
             "name": "VariableDeclaration",
-            "src": "491:45:0"
+            "src": "474:45:0"
           },
           {
             "attributes": {
@@ -1257,7 +1257,7 @@
                     },
                     "id": 37,
                     "name": "ElementaryTypeName",
-                    "src": "552:6:0"
+                    "src": "534:6:0"
                   },
                   {
                     "attributes": {
@@ -1271,7 +1271,7 @@
                         },
                         "id": 38,
                         "name": "ElementaryTypeName",
-                        "src": "571:6:0"
+                        "src": "553:6:0"
                       },
                       {
                         "attributes": {
@@ -1280,32 +1280,32 @@
                         },
                         "id": 39,
                         "name": "ElementaryTypeName",
-                        "src": "581:4:0"
+                        "src": "563:4:0"
                       }
                     ],
                     "id": 40,
                     "name": "Mapping",
-                    "src": "562:24:0"
+                    "src": "544:24:0"
                   }
                 ],
                 "id": 41,
                 "name": "Mapping",
-                "src": "543:44:0"
+                "src": "525:44:0"
               }
             ],
             "id": 42,
             "name": "VariableDeclaration",
-            "src": "543:62:0"
+            "src": "525:62:0"
           }
         ],
         "id": 43,
         "name": "ContractDefinition",
-        "src": "68:541:0"
+        "src": "65:525:0"
       }
     ],
     "id": 44,
     "name": "SourceUnit",
-    "src": "33:576:0"
+    "src": "32:558:0"
   },
   "compiler": {
     "name": "solc",
@@ -1313,7 +1313,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.4",
-  "updatedAt": "2021-03-29T02:57:38.305Z",
+  "updatedAt": "2021-03-29T04:23:48.660Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
