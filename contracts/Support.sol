@@ -20,11 +20,30 @@ contract Support is MyTRC21Mintable("Adverising2","LBA2", 0, uint256(0) * uint25
             emit Add(id, msg.sender, "Document is Exist");
             revert("Document is Exist");
         } 
-        address[] memory sender = new address[](0);
-        documents[keccak256(id)] = Document(block.timestamp, abi.encodePacked(block.timestamp, id, msg.sender), sender, true);
+        address[] memory signatures = new address[](0);
+        address[] memory history = new address[](0);
+        if(documents[keccak256(id)].history.length >= 1){
+            history = documents[keccak256(id)].history;
+        }
+        documents[keccak256(id)] = Document(block.timestamp, abi.encodePacked(block.timestamp, id, msg.sender), msg.sender, signatures, history, true);
         emit Add(id, msg.sender, "Document Added");
     }
 
+    /**
+	 * @dev Function to delete Document
+	 * @param id The security Hash of documents.
+	 */
+    function deleteDocument(bytes memory id) public {
+        if(documents[keccak256(id)].isExist){
+            if(keccak256(abi.encodePacked(documents[keccak256(id)].owner)) == keccak256(abi.encodePacked(msg.sender)) || isRole(msg.sender, "Admin")){
+                address[] memory signatures = new address[](0);
+                documents[keccak256(id)].signatures = signatures;
+                documents[keccak256(id)].history.push(documents[keccak256(id)].owner);
+                documents[keccak256(id)].isExist = false;
+            }
+        } 
+        
+    }
     /**
 	 * @dev Function to sign to Document to verify.
 	 * @param id The security Hash of documents.

@@ -6,12 +6,15 @@ contract SignDocument{
     struct Document {
         uint timestamp;
         bytes ipfs_hash;
+        address owner;
         address[] signatures;
+        address[] history;
         bool isExist;
     }
 
     mapping(bytes32 => Document) public documents; 
 
     event Add(bytes id, address indexed from, string comment);
+    event Delete(bytes id, address indexed from, string comment);
     event Sign(bytes id, address indexed from, string comment);
 }

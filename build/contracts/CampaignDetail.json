@@ -132,7 +132,7 @@
   "sourceMap": "68:541:0:-:0;;;;;;;;;;;;;;;;;;;",
   "deployedSourceMap": "68:541:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;491:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;543:62;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;491:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;543:62::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
   "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.7.0 <0.8.0;\r\n\r\ncontract CampaignDetail{\r\n    \r\n    struct Campaign {\r\n        string campaignId;\r\n        address advertiser;\r\n        uint totalBudget;\r\n        uint remainBudget;\r\n        uint feeCancel;\r\n        bool isActive;\r\n        bool isExist;\r\n    }\r\n\r\n    event AuthorityCampaign(address indexed owner, string campaignId, uint256 value);\r\n    event CreateCampaign(address indexed owner, string campaignId, uint256 value);\r\n    mapping (string => Campaign) public campaigns;\r\n    mapping (string => mapping (string => bool)) public checkPayed;\r\n}",
-  "sourcePath": "D:\\CN9\\Capstone\\LBAContract.github.io\\contracts\\CampaignDetail.sol",
+  "sourcePath": "D:/CN9/Capstone/LBAContract.github.io/contracts/CampaignDetail.sol",
   "ast": {
     "absolutePath": "/D/CN9/Capstone/LBAContract.github.io/contracts/CampaignDetail.sol",
     "exportedSymbols": {
@@ -1312,8 +1312,8 @@
     "version": "0.7.0+commit.9e61f92b.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.3.3",
-  "updatedAt": "2021-03-21T04:20:37.144Z",
+  "schemaVersion": "3.3.4",
+  "updatedAt": "2021-03-29T02:57:38.305Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
