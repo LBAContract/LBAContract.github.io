@@ -7,7 +7,7 @@ import './SafeMath.sol';
 import './Ownable.sol';
 import './CampaignDetail.sol';
 
-contract Support is MyTRC21Mintable("Adverising2","LBA2", 0, uint256(0) * uint256(10)**18, uint256(0) * uint256(10)**18), SignDocument, CampaignDetail, AccessControl{
+contract Support is MyTRC21Mintable("Adverising","LBAT", 0, uint256(0) * uint256(10)**18, uint256(0) * uint256(10)**18), SignDocument, CampaignDetail, AccessControl{
     using SafeMath for uint;
 
     /* BEGIN: Document function*/
@@ -152,14 +152,19 @@ contract Support is MyTRC21Mintable("Adverising2","LBA2", 0, uint256(0) * uint25
 	 * @dev Function to Cancel Campaign
 	 * @param campaignId The string Identifier of Campaign
 	 */
-    function cancelCampaign(string memory campaignId) public onlyUser{
+    function cancelCampaign(string memory campaignId) public{
         require(campaigns[campaignId].isExist,"Campaign is not Exist");
         require(campaigns[campaignId].isActive,"Campaign is not Active");
-        require(campaigns[campaignId].advertiser == msg.sender);
-
-        transfer(campaigns[campaignId].advertiser, 
-                            campaigns[campaignId].totalBudget.sub(campaigns[campaignId].feeCancel));
-
+        require(campaigns[campaignId].advertiser == msg.sender || isRole(msg.sender, "Admin"));
+        
+        if(isRole(msg.sender, "Admin")){
+            transfer(campaigns[campaignId].advertiser, campaigns[campaignId].remainBudget);
+        }else{
+            uint temp = campaigns[campaignId].remainBudget.sub(campaigns[campaignId].feeCancel);
+            if(temp > 0){
+                transfer(campaigns[campaignId].advertiser,  temp);
+            }
+        }
         
         campaigns[campaignId].isActive = false;
         campaigns[campaignId].remainBudget = 0;
