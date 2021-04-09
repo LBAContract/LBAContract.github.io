@@ -83,7 +83,7 @@ contract Support is MyTRC21Mintable("Adverising","LBAT", 0, uint256(0) * uint256
 	 * @param id The security Hash of documents.
 	 * @return Array of address of signed
 	 */
-    function getRejectDocument(bytes memory id) public view returns (address[] memory) {
+    function getApproveDocument(bytes memory id) public view returns (address[] memory) {
         return documents[keccak256(id)].approve;
     }
 
@@ -92,8 +92,34 @@ contract Support is MyTRC21Mintable("Adverising","LBAT", 0, uint256(0) * uint256
 	 * @param id The security Hash of documents.
 	 * @return Array of address of signed
 	 */
-    function getApproveDocument(bytes memory id) public view returns (address[] memory) {
+    function getRejectDocument(bytes memory id) public view returns (address[] memory) {
         return documents[keccak256(id)].reject;
+    }
+
+    /**
+	 * @dev Function to get all signature of document by Security hash of document
+	 * @param id The security Hash of documents.
+	 * @return Array of address of signed
+	 */
+    function checkDocumentIsApproveOrReject(bytes memory id) public view returns (uint) {
+        uint countApprove = 0;
+        uint countReject = 0;
+        
+        for(uint i = 0; i < documents[keccak256(id)].approve.length; i++){
+            if(keccak256(abi.encodePacked(documents[keccak256(id)].approve[i])) != keccak256(abi.encodePacked(address(0x0)))){
+                countApprove=countApprove+1;
+            }
+        }
+        
+        for(uint i = 0; i < documents[keccak256(id)].reject.length; i++){
+            if(keccak256(abi.encodePacked(documents[keccak256(id)].reject[i])) != keccak256(abi.encodePacked(address(0x0)))){
+                countReject=countReject+1;
+            }
+        }
+        if(countApprove == 0 && countReject == 0) return 0;
+        if(countApprove > countReject) return 1;
+        if(countApprove <= countReject) return 2;
+        return 3;
     }
     /*END: Document function*/
 

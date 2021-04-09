@@ -2,7 +2,7 @@
   "RPC_ENDPOINT": "https://rpc.testnet.tomochain.com",
   "WSS_ENDPOINT": "wss://ws.testnet.tomochain.com",
   "NETWORK_ID": "89",
-  "SUPPORT_ADDRESS": "0xFbf7BdB7Bf6a7d3B61Dcee2BE4268F263BD59acb",
+  "SUPPORT_ADDRESS": "0xFf63E8506cF7AE58FB4FB69D97247Bcb1a60B2ef",
   "MIN_FEE": "1.0",
   "TOKENS": [
     {
