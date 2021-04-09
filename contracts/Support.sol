@@ -16,14 +16,12 @@ contract Support is MyTRC21Mintable("Adverising","LBAT", 0, uint256(0) * uint256
 	 * @param id The security Hash of documents.
 	 */
     function addDocument(bytes memory id) public {
-        if(documents[keccak256(id)].isExist){
-            emit Add(id, msg.sender, "Document is Exist");
-            revert("Document is Exist");
-        } 
-        address[] memory approve = new address[](0);
-        address[] memory reject = new address[](0);
-        documents[keccak256(id)] = Document(block.timestamp, abi.encodePacked(block.timestamp, id, msg.sender), msg.sender, approve, reject, true);
-        emit Add(id, msg.sender, "Document Added");
+        if((documents[keccak256(id)].isExist && keccak256(abi.encodePacked(documents[keccak256(id)].owner)) == keccak256(abi.encodePacked(msg.sender))) || !documents[keccak256(id)].isExist){
+            address[] memory approve = new address[](0);
+            address[] memory reject = new address[](0);
+            documents[keccak256(id)] = Document(block.timestamp, abi.encodePacked(block.timestamp, id, msg.sender), msg.sender, approve, reject, true);
+            emit Add(id, msg.sender, "Document Added");
+        }
     }
 
     /**
@@ -33,11 +31,8 @@ contract Support is MyTRC21Mintable("Adverising","LBAT", 0, uint256(0) * uint256
     function deleteDocument(bytes memory id) public {
         if(documents[keccak256(id)].isExist){
             if(keccak256(abi.encodePacked(documents[keccak256(id)].owner)) == keccak256(abi.encodePacked(msg.sender)) || isRole(msg.sender, "Admin")){
-                address[] memory approve = new address[](0);
-                address[] memory reject = new address[](0);
-                documents[keccak256(id)].approve = approve;
-                documents[keccak256(id)].reject = reject;
                 documents[keccak256(id)].isExist = false;
+                emit Delete(id, msg.sender, "Document Deleted");
             }
         } 
     }
