@@ -31,7 +31,7 @@ contract Support is MyTRC21Mintable("Adverising","LBAT", 0, uint256(0) * uint256
     function deleteDocument(bytes memory id) public {
         if(documents[keccak256(id)].isExist){
             if(keccak256(abi.encodePacked(documents[keccak256(id)].owner)) == keccak256(abi.encodePacked(msg.sender)) || isRole(msg.sender, "Admin")){
-                documents[keccak256(id)].isExist = false;
+                delete documents[keccak256(id)];
                 emit Delete(id, msg.sender, "Document Deleted");
             }
         } 
