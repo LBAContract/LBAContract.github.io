@@ -2,12 +2,12 @@
 pragma experimental ABIEncoderV2;
 pragma solidity >=0.7.0 <0.8.0;
 import "./TRC21.sol";
-import "./SignDocument.sol";
+import "./ManageDocument.sol";
 import './SafeMath.sol';
 import './Ownable.sol';
 import './CampaignDetail.sol';
 
-contract Support is MyTRC21Mintable("Adverising","LBAT", 0, uint256(0) * uint256(10)**18, uint256(0) * uint256(10)**18), SignDocument, CampaignDetail, AccessControl{
+contract Support is MyTRC21Mintable("Adverising","LBAT", 0, uint256(0) * uint256(10)**18, uint256(0) * uint256(10)**18), ManageDocument, CampaignDetail, AccessControl{
     using SafeMath for uint;
 
     /* BEGIN: Document function*/
@@ -20,12 +20,9 @@ contract Support is MyTRC21Mintable("Adverising","LBAT", 0, uint256(0) * uint256
             emit Add(id, msg.sender, "Document is Exist");
             revert("Document is Exist");
         } 
-        address[] memory signatures = new address[](0);
-        address[] memory history = new address[](0);
-        if(documents[keccak256(id)].history.length >= 1){
-            history = documents[keccak256(id)].history;
-        }
-        documents[keccak256(id)] = Document(block.timestamp, abi.encodePacked(block.timestamp, id, msg.sender), msg.sender, signatures, history, true);
+        address[] memory approve = new address[](0);
+        address[] memory reject = new address[](0);
+        documents[keccak256(id)] = Document(block.timestamp, abi.encodePacked(block.timestamp, id, msg.sender), msg.sender, approve, reject, true);
         emit Add(id, msg.sender, "Document Added");
     }
 
@@ -36,36 +33,45 @@ contract Support is MyTRC21Mintable("Adverising","LBAT", 0, uint256(0) * uint256
     function deleteDocument(bytes memory id) public {
         if(documents[keccak256(id)].isExist){
             if(keccak256(abi.encodePacked(documents[keccak256(id)].owner)) == keccak256(abi.encodePacked(msg.sender)) || isRole(msg.sender, "Admin")){
-                address[] memory signatures = new address[](0);
-                documents[keccak256(id)].signatures = signatures;
-                documents[keccak256(id)].history.push(documents[keccak256(id)].owner);
+                address[] memory approve = new address[](0);
+                address[] memory reject = new address[](0);
+                documents[keccak256(id)].approve = approve;
+                documents[keccak256(id)].reject = reject;
                 documents[keccak256(id)].isExist = false;
             }
         } 
-        
     }
+
     /**
-	 * @dev Function to sign to Document to verify.
+	 * @dev Function to approve to Document to verify.
 	 * @param id The security Hash of documents.
 	 */
-    function signDocument(bytes memory id) public {
+    function approveDocument(bytes memory id) public {
         require(!isRole(msg.sender,"Minter") && !isOwner(msg.sender) && !isRole(msg.sender, "Server"));
+        require(isRole(msg.sender,"Admin"));
         if(!documents[keccak256(id)].isExist){
             emit Sign(id, msg.sender, "Document is not Exist"); 
             revert("Document is not Exist");
         }
-        bool checkDulicate = false;
-        for(uint i = 0; i < documents[keccak256(id)].signatures.length; i++){
-            if(keccak256(abi.encodePacked(documents[keccak256(id)].signatures[i])) == keccak256(abi.encodePacked(msg.sender))){
-                checkDulicate = true;
-                break;
-            }
+        removeReject(id, msg.sender);
+        documents[keccak256(id)].approve.push(msg.sender);
+        emit Sign(id, msg.sender, "Document Approved");
+    }
+
+    /**
+	 * @dev Function to reject to Document to verify.
+	 * @param id The security Hash of documents.
+	 */
+    function rejectDocument(bytes memory id) public {
+        require(!isRole(msg.sender,"Minter") && !isOwner(msg.sender) && !isRole(msg.sender, "Server"));
+        require(isRole(msg.sender,"Admin"));
+        if(!documents[keccak256(id)].isExist){
+            emit Sign(id, msg.sender, "Document is not Exist");
+            revert("Document is not Exist");
         }
-        if(!checkDulicate){
-            documents[keccak256(id)].signatures.push(msg.sender);
-            emit Sign(id, msg.sender, "Document Signed");
-        }
-        emit Sign(id, msg.sender, "Document already Signed");
+        removeApprove(id, msg.sender);
+        documents[keccak256(id)].reject.push(msg.sender);
+        emit Sign(id, msg.sender, "Document Rejected");
     }
 
     /**
@@ -73,22 +79,26 @@ contract Support is MyTRC21Mintable("Adverising","LBAT", 0, uint256(0) * uint256
 	 * @param id The security Hash of documents.
 	 * @return Array of address of signed
 	 */
-    function getSignatures(bytes memory id) public view returns (address[] memory) {
-        return documents[keccak256(id)].signatures;
+    function getOwnerDocument(bytes memory id) public view returns (address) {
+        return documents[keccak256(id)].owner;
+    }
+
+     /**
+	 * @dev Function to get all signature of document by Security hash of document
+	 * @param id The security Hash of documents.
+	 * @return Array of address of signed
+	 */
+    function getRejectDocument(bytes memory id) public view returns (address[] memory) {
+        return documents[keccak256(id)].approve;
     }
 
     /**
-	 * @dev Function to check Admin Sign
+	 * @dev Function to get all signature of document by Security hash of document
 	 * @param id The security Hash of documents.
-	 * @return A boolean that verifier admin is signed this document. True is admin signed.
+	 * @return Array of address of signed
 	 */
-    function checkAdminSigned(bytes memory id) public view returns (bool) {
-        for(uint i = 0; i < documents[keccak256(id)].signatures.length; i++){
-            if(isRole(documents[keccak256(id)].signatures[i], "Admin")){
-                return true;
-            }
-        }
-        return false;
+    function getApproveDocument(bytes memory id) public view returns (address[] memory) {
+        return documents[keccak256(id)].reject;
     }
     /*END: Document function*/
 

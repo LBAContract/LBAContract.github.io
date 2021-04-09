@@ -132,7 +132,7 @@
   "sourceMap": "65:525:0:-:0;;;;;;;;;;;;;;;;;;;",
   "deployedSourceMap": "65:525:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;474:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;525:62;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;474:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;525:62::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
   "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.7.0 <0.8.0;\n\ncontract CampaignDetail{\n    \n    struct Campaign {\n        string campaignId;\n        address advertiser;\n        uint totalBudget;\n        uint remainBudget;\n        uint feeCancel;\n        bool isActive;\n        bool isExist;\n    }\n\n    event AuthorityCampaign(address indexed owner, string campaignId, uint256 value);\n    event CreateCampaign(address indexed owner, string campaignId, uint256 value);\n    mapping (string => Campaign) public campaigns;\n    mapping (string => mapping (string => bool)) public checkPayed;\n}",
-  "sourcePath": "D:\\CN9\\Capstone\\LBAContract.github.io\\contracts\\CampaignDetail.sol",
+  "sourcePath": "D:/CN9/Capstone/LBAContract.github.io/contracts/CampaignDetail.sol",
   "ast": {
     "absolutePath": "/D/CN9/Capstone/LBAContract.github.io/contracts/CampaignDetail.sol",
     "exportedSymbols": {
@@ -1313,7 +1313,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.4",
-  "updatedAt": "2021-03-30T13:50:46.817Z",
+  "updatedAt": "2021-04-09T04:16:18.966Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
