@@ -48,6 +48,7 @@ contract Support is MyTRC21Mintable("Adverising","LBAT", 0, uint256(0) * uint256
             emit Sign(id, msg.sender, "Document is not Exist"); 
             revert("Document is not Exist");
         }
+        removeApprove(id, msg.sender);
         removeReject(id, msg.sender);
         documents[keccak256(id)].approve.push(msg.sender);
         emit Sign(id, msg.sender, "Document Approved");
@@ -65,6 +66,7 @@ contract Support is MyTRC21Mintable("Adverising","LBAT", 0, uint256(0) * uint256
             revert("Document is not Exist");
         }
         removeApprove(id, msg.sender);
+        removeReject(id, msg.sender);
         documents[keccak256(id)].reject.push(msg.sender);
         emit Sign(id, msg.sender, "Document Rejected");
     }
