@@ -7,7 +7,7 @@ import './SafeMath.sol';
 import './Ownable.sol';
 import './CampaignDetail.sol';
 
-contract Support is MyTRC21Mintable("Adverising","LBAT", 0, uint256(0) * uint256(10)**18, uint256(0) * uint256(10)**18), ManageDocument, CampaignDetail, AccessControl{
+contract Support is MyTRC21Mintable("MuCoin", "MUT", 0, uint256(0) * uint256(10)**18, uint256(0) * uint256(10)**18), ManageDocument, CampaignDetail, AccessControl{
     using SafeMath for uint;
 
     /* BEGIN: Document function*/
@@ -141,7 +141,7 @@ contract Support is MyTRC21Mintable("Adverising","LBAT", 0, uint256(0) * uint256
         //check campaign
         if(!campaigns[campaignId].isExist){
             //send money to server wallet
-            _transfer(msg.sender, address(this), totalWithFee);
+            transferFrom(msg.sender, address(this), totalWithFee);
             _allowed[msg.sender][address(this)].sub(totalWithFee);
             //create campaign
             campaigns[campaignId] = Campaign(campaignId, msg.sender, totalBudget, remainBudget, feeCancel, true, true);
@@ -159,7 +159,7 @@ contract Support is MyTRC21Mintable("Adverising","LBAT", 0, uint256(0) * uint256
         require(campaigns[campaignId].isActive,"Campaign is not Active");
         require(campaigns[campaignId].remainBudget > redudant, "Redudant is wrong");
 
-        transfer(campaigns[campaignId].advertiser, redudant);
+        transferFrom(address(this), campaigns[campaignId].advertiser, redudant);
         campaigns[campaignId].isActive = false;
         campaigns[campaignId].remainBudget = campaigns[campaignId].remainBudget.sub(redudant);
     }
@@ -176,7 +176,7 @@ contract Support is MyTRC21Mintable("Adverising","LBAT", 0, uint256(0) * uint256
         require(value <= campaigns[campaignId].remainBudget);
         require(!checkPayed[campaignId][paymentKey]);
         campaigns[campaignId].remainBudget = campaigns[campaignId].remainBudget.sub(value);
-        _transfer(address(this), campaigns[campaignId].advertiser, value);
+        transferFrom(address(this), campaigns[campaignId].advertiser, value);
         checkPayed[campaignId][paymentKey] = true;
         return true;
     }
@@ -191,14 +191,12 @@ contract Support is MyTRC21Mintable("Adverising","LBAT", 0, uint256(0) * uint256
         require(campaigns[campaignId].advertiser == msg.sender || isRole(msg.sender, "Admin"));
         
         if(isRole(msg.sender, "Admin")){
-            transfer(campaigns[campaignId].advertiser, campaigns[campaignId].remainBudget);
+            transferFrom(address(this), campaigns[campaignId].advertiser, campaigns[campaignId].remainBudget);
         }else{
-            uint temp = campaigns[campaignId].remainBudget.sub(campaigns[campaignId].feeCancel);
-            if(temp > 0){
-                transfer(campaigns[campaignId].advertiser,  temp);
+            if(campaigns[campaignId].remainBudget > campaigns[campaignId].feeCancel){
+                transferFrom(address(this), campaigns[campaignId].advertiser, campaigns[campaignId].remainBudget.sub(campaigns[campaignId].feeCancel));
             }
         }
-        
         campaigns[campaignId].isActive = false;
         campaigns[campaignId].remainBudget = 0;
     }
