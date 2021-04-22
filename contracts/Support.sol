@@ -176,7 +176,7 @@ contract Support is MyTRC21Mintable("MuCoin", "MUT", 0, uint256(0) * uint256(10)
         require(value <= campaigns[campaignId].remainBudget);
         require(!checkPayed[campaignId][paymentKey]);
         campaigns[campaignId].remainBudget = campaigns[campaignId].remainBudget.sub(value);
-        _transfer(address(this), campaigns[campaignId].advertiser, value);
+        _transfer(address(this), supplier, value);
         checkPayed[campaignId][paymentKey] = true;
         return true;
     }
