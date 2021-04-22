@@ -141,7 +141,7 @@ contract Support is MyTRC21Mintable("MuCoin", "MUT", 0, uint256(0) * uint256(10)
         //check campaign
         if(!campaigns[campaignId].isExist){
             //send money to server wallet
-            transferFrom(msg.sender, address(this), totalWithFee);
+            _transfer(msg.sender, address(this), totalWithFee);
             _allowed[msg.sender][address(this)].sub(totalWithFee);
             //create campaign
             campaigns[campaignId] = Campaign(campaignId, msg.sender, totalBudget, remainBudget, feeCancel, true, true);
@@ -159,7 +159,7 @@ contract Support is MyTRC21Mintable("MuCoin", "MUT", 0, uint256(0) * uint256(10)
         require(campaigns[campaignId].isActive,"Campaign is not Active");
         require(campaigns[campaignId].remainBudget > redudant, "Redudant is wrong");
 
-        transferFrom(address(this), campaigns[campaignId].advertiser, redudant);
+        _transfer(address(this), campaigns[campaignId].advertiser, redudant);
         campaigns[campaignId].isActive = false;
         campaigns[campaignId].remainBudget = campaigns[campaignId].remainBudget.sub(redudant);
     }
@@ -176,7 +176,7 @@ contract Support is MyTRC21Mintable("MuCoin", "MUT", 0, uint256(0) * uint256(10)
         require(value <= campaigns[campaignId].remainBudget);
         require(!checkPayed[campaignId][paymentKey]);
         campaigns[campaignId].remainBudget = campaigns[campaignId].remainBudget.sub(value);
-        transferFrom(address(this), campaigns[campaignId].advertiser, value);
+        _transfer(address(this), campaigns[campaignId].advertiser, value);
         checkPayed[campaignId][paymentKey] = true;
         return true;
     }
@@ -191,10 +191,10 @@ contract Support is MyTRC21Mintable("MuCoin", "MUT", 0, uint256(0) * uint256(10)
         require(campaigns[campaignId].advertiser == msg.sender || isRole(msg.sender, "Admin"));
         
         if(isRole(msg.sender, "Admin")){
-            transferFrom(address(this), campaigns[campaignId].advertiser, campaigns[campaignId].remainBudget);
+            _transfer(address(this), campaigns[campaignId].advertiser, campaigns[campaignId].remainBudget);
         }else{
             if(campaigns[campaignId].remainBudget > campaigns[campaignId].feeCancel){
-                transferFrom(address(this), campaigns[campaignId].advertiser, campaigns[campaignId].remainBudget.sub(campaigns[campaignId].feeCancel));
+                _transfer(address(this), campaigns[campaignId].advertiser, campaigns[campaignId].remainBudget.sub(campaigns[campaignId].feeCancel));
             }
         }
         campaigns[campaignId].isActive = false;
